@@ -7,126 +7,224 @@
     <meta name="description" content="Land Solution - আপনার স্বপ্নের জমি, আমাদের সাথে। Buy, sell, or rent residential and commercial plots, land, and property.">
     <meta name="keywords" content="Land Solution, buy land in kolkata, plots for sale, জমি কেনা বেচা, ল্যান্ড সলিউশন">
     
-    <!-- আইকনের জন্য লিঙ্ক -->
+    <!-- ফ্রন্ট ও আইকনের জন্য লিঙ্ক -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&display=swap" rel="stylesheet">
 
     <style>
+        :root {
+            --primary-color: #0b4619; /* ডিপ লাক্সারি গ্রিন */
+            --secondary-color: #0f75bc; /* কর্পোরেট ব্লু */
+            --accent-color: #f5a623; /* গোল্ডেন অ্যাকসেন্ট */
+            --bg-light: #f8faf9;
+            --text-dark: #2c3e50;
+        }
+
         body {
-            font-family: 'Segoe UI', Arial, sans-serif;
+            font-family: 'Hind Siliguri', 'Segoe UI', Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f7f6;
-            color: #333;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
         }
-        /* হেডার সেকশন */
+
+        /* প্রিমিয়াম হেডার */
         .header {
-            background: white;
-            padding: 30px 20px;
+            background: linear-gradient(135deg, #0b4619 0%, #1b5e20 100%);
+            padding: 50px 20px;
             text-align: center;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            color: white;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+            border-bottom: 5px solid var(--accent-color);
         }
         .main-title {
-            color: #1b5e20;
-            font-size: 38px;
-            margin: 5px 0;
-            font-weight: bold;
+            font-size: 42px;
+            margin: 0;
+            font-weight: 700;
             letter-spacing: 1px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
         .sub-title {
-            color: #0f75bc;
-            font-size: 22px;
-            margin: 5px 0;
+            color: var(--accent-color);
+            font-size: 24px;
+            margin: 5px 0 15px 0;
             font-weight: 600;
             text-transform: uppercase;
+            letter-spacing: 2px;
         }
-        .tagline {
-            color: #666;
-            font-size: 16px;
-            margin-top: 10px;
+        .tagline-container {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 6px 20px;
+            border-radius: 50px;
+            font-size: 15px;
             font-weight: 500;
         }
+
         .container {
-            width: 90%;
+            width: 92%;
             max-width: 1200px;
-            margin: 30px auto;
+            margin: 40px auto;
         }
-        /* বাটন গ্রিড */
+
+        /* কন্টাক্ট সেকশন কার্ড */
         .contact-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-            margin-bottom: 40px;
+            gap: 25px;
+            margin-bottom: 50px;
         }
         .contact-card {
             background: white;
-            padding: 25px;
-            border-radius: 10px;
+            padding: 35px 25px;
+            border-radius: 15px;
             text-align: center;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-top: 4px solid transparent;
         }
-        .contact-card i { font-size: 45px; margin-bottom: 15px; }
+        .contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
+        .card-wp { border-top-color: #25D366; }
+        .card-call { border-top-color: var(--secondary-color); }
+
+        .contact-card i { font-size: 50px; margin-bottom: 20px; }
         .c-wp { color: #25D366; }
-        .c-call { color: #0f75bc; }
+        .c-call { color: var(--secondary-color); }
         
+        .contact-card h3 {
+            margin: 0 0 10px 0;
+            font-size: 22px;
+            color: #111;
+        }
+        .contact-card p {
+            color: #666;
+            font-size: 15px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
         .btn {
-            display: inline-block;
-            padding: 12px 30px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 14px 35px;
             color: white;
             text-decoration: none;
-            border-radius: 5px;
+            border-radius: 8px;
             font-weight: bold;
-            margin-top: 15px;
+            font-size: 16px;
+            transition: background 0.3s;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
         .btn-wp { background-color: #25D366; }
-        .btn-call { background-color: #0f75bc; }
+        .btn-wp:hover { background-color: #20ba56; }
+        .btn-call { background-color: var(--secondary-color); }
+        .btn-call:hover { background-color: #0d64a2; }
 
-        /* গ্যালারি ও ফর্ম */
+        /* প্রিমিয়াম প্রপার্টি গ্যালারি */
         .section-title {
-            border-left: 5px solid #1b5e20;
-            padding-left: 10px;
-            color: #222;
-            margin-bottom: 20px;
+            font-size: 26px;
+            color: #111;
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .section-title i {
+            color: var(--primary-color);
         }
         .property-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
         }
         .property-card {
             background: white;
-            border-radius: 8px;
+            border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            border: 1px solid #eaeaea;
         }
         .media-placeholder {
-            background: #e8f5e9;
-            height: 180px;
+            background: linear-gradient(45deg, #e8f5e9, #c8e6c9);
+            height: 200px;
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
-            color: #1b5e20;
-            font-weight: bold;
-            font-size: 18px;
+            color: var(--primary-color);
+            gap: 10px;
         }
-        .property-info { padding: 20px; }
+        .media-placeholder i {
+            font-size: 40px;
+        }
+        .media-placeholder span {
+            font-weight: 700;
+            font-size: 18px;
+            letter-spacing: 0.5px;
+        }
+        .property-info { 
+            padding: 25px; 
+        }
+        .property-info h3 {
+            margin: 0 0 12px 0;
+            font-size: 20px;
+            color: #111;
+        }
+        .property-info p {
+            color: #555;
+            font-size: 15px;
+            line-height: 1.6;
+            margin: 0;
+        }
         
+        /* কন্টাক্ট ফর্ম ও ম্যাপ */
         .form-map-section {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 35px;
+            margin-top: 60px;
         }
         .form-container, .map-container {
             background: white;
-            padding: 25px;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border: 1px solid #eaeaea;
         }
-        /* ফ্লোটিং হোয়াটসঅ্যাপ */
+        .form-box {
+            background: #fafafa;
+            height: 220px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px dashed #ddd;
+            border-radius: 10px;
+            color: #777;
+            font-weight: 600;
+        }
+        .map-box {
+            background: #f0f0f0;
+            height: 180px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            color: #555;
+            gap: 8px;
+            font-weight: 600;
+        }
+
+        /* ফ্লোটিং হোয়াটসঅ্যাপ বাটন */
         .floating-wp {
             position: fixed;
-            bottom: 20px;
-            right: 20px;
+            bottom: 25px;
+            right: 25px;
             background-color: #25D366;
             color: white;
             width: 60px;
@@ -134,16 +232,24 @@
             border-radius: 50%;
             text-align: center;
             line-height: 60px;
-            font-size: 30px;
-            box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+            font-size: 32px;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
             z-index: 1000;
+            transition: transform 0.3s;
         }
+        .floating-wp:hover {
+            transform: scale(1.1);
+        }
+
+        /* ফুটার */
         footer {
-            background: #222;
-            color: #bbb;
+            background: #111;
+            color: #999;
             text-align: center;
-            padding: 20px;
-            margin-top: 50px;
+            padding: 25px;
+            margin-top: 60px;
+            font-size: 14px;
+            border-top: 3px solid var(--accent-color);
         }
     </style>
 </head>
@@ -153,42 +259,50 @@
     <div class="header">
         <div class="main-title">ল্যান্ড সলিউশন</div>
         <div class="sub-title">Land Solution</div>
-        <div class="tagline">বিশ্বাসযোগ্যতা • স্বচ্ছতা • সঠিক ডিল</div>
+        <div class="tagline-container">
+            <i class="fas fa-check-circle" style="color:var(--accent-color);"></i> বিশ্বাসযোগ্যতা • স্বচ্ছতা • সঠিক ডিল
+        </div>
     </div>
 
     <div class="container">
         
         <!-- কন্টাক্ট বাটন সমূহ -->
         <div class="contact-grid">
-            <div class="contact-card">
+            <div class="contact-card card-wp">
                 <i class="fab fa-whatsapp c-wp"></i>
                 <h3>হোয়াটসঅ্যাপ যোগাযোগ</h3>
-                <p>সরাসরি আমাদের সাথে চ্যাট শুরু করতে নিচের বাটনে ক্লিক করুন।</p>
+                <p>সরাসরি আমাদের সাথে চ্যাট শুরু করতে এবং প্রপার্টির বিস্তারিত জানতে নিচের বাটনে ক্লিক করুন।</p>
                 <a href="https://wa.me/917980471077" target="_blank" class="btn btn-wp"><i class="fab fa-whatsapp"></i> চ্যাট করুন</a>
             </div>
-            <div class="contact-card">
+            <div class="contact-card card-call">
                 <i class="fas fa-phone-alt c-call"></i>
                 <h3>সরাসরি কল করুন</h3>
-                <p>যেকোনো তথ্যের জন্য সরাসরি কথা বলুন আমাদের সাথে।</p>
+                <p>যেকোনো ধরনের কমার্শিয়াল বা রেসিডেন্সিয়াল প্লটের তথ্যের জন্য সরাসরি কথা বলুন আমাদের সাথে।</p>
                 <a href="tel:+919163867544" class="btn btn-call"><i class="fas fa-phone-alt"></i> কল করুন</a>
             </div>
         </div>
 
         <!-- ছবি ও ভিডিওর জন্য প্রপার্টি সেকশন -->
-        <h2 class="section-title"><i class="fas fa-images"></i> আমাদের প্রপার্টি সমূহ (ছবি ও ভিডিও)</h2>
+        <h2 class="section-title"><i class="fas fa-city"></i> আমাদের প্রপার্টি সমূহ (ছবি ও ভিডিও)</h2>
         <div class="property-grid">
             <div class="property-card">
-                <div class="media-placeholder"><i class="fas fa-warehouse" style="margin-right:10px;"></i> গোডাউন / ফ্যাক্টরি</div>
+                <div class="media-placeholder">
+                    <i class="fas fa-warehouse"></i>
+                    <span>গোডাউন / ফ্যাক্টরি স্পেস</span>
+                </div>
                 <div class="property-info">
                     <h3>কমার্শিয়াল গোডাউন স্পেস</h3>
-                    <p>হাওড়ার জালাল কমপ্লেক্সের কাছে আধুনিক ও সুবিধাজনক গোডাউন বা ফ্যাক্টরি স্পেস।</p>
+                    <p>হাওড়ার জালাল কমপ্লেক্সের কাছে আধুনিক সুযোগ-সুবিধা সহ এবং যাতায়াতের সুব্যবস্থা যুক্ত পারফেক্ট গোডাউন বা ফ্যাক্টরি স্পেস।</p>
                 </div>
             </div>
             <div class="property-card">
-                <div class="media-placeholder"><i class="fas fa-map" style="margin-right:10px;"></i> নতুন প্লট / জমি</div>
+                <div class="media-placeholder">
+                    <i class="fas fa-map-marked-alt"></i>
+                    <span>নতুন প্লট / জমি</span>
+                </div>
                 <div class="property-info">
                     <h3>খালি জমি ক্রয়-বিক্রয়</h3>
-                    <p>ف্যাক্টরি বা প্রজেক্ট তৈরির জন্য সম্পূর্ণ আইনি ঝামেলামুক্ত পরিষ্কার প্লট।</p>
+                    <p>ফ্যাক্টরি, কমার্শিয়াল প্রজেক্ট বা আবাসন তৈরির জন্য সম্পূর্ণ আইনি ঝামেলামুক্ত ও পরিষ্কার দাগের প্লট।</p>
                 </div>
             </div>
         </div>
@@ -196,16 +310,17 @@
         <!-- ফর্ম এবং গুগল ম্যাপ লোকেশন -->
         <div class="form-map-section">
             <div class="form-container">
-                <h3 class="section-title"><i class="fas fa-envelope"></i> কন্টাক্ট ফর্ম</h3>
-                <p style="padding:20px; background:#f9f9f9; text-align:center; border:1px dashed #ccc; border-radius:5px;">
-                    🎯 এখানে আপনার গুগল ফর্মটি লোড হবে।
-                </p>
+                <h3 class="section-title"><i class="fas fa-file-alt"></i> ইনকোয়ারি ফর্ম</h3>
+                <div class="form-box">
+                    🎯 এখানে আপনার গুগল ফর্মটি লিংক হবে
+                </div>
             </div>
 
             <div class="map-container">
-                <h3 class="section-title"><i class="fas fa-map-marker-alt"></i> আমাদের ঠিকানা</h3>
-                <p><strong>অফিস:</strong> জালাল কমপ্লেক্স, হাওড়া, পশ্চিমবঙ্গ।</p>
-                <div style="background:#e5e5e5; height:150px; display:flex; align-items:center; justify-content:center; border-radius:5px; color:#555;">
+                <h3 class="section-title"><i class="fas fa-map-marker-alt"></i> আমাদের অফিস</h3>
+                <p style="margin-bottom: 15px;"><strong>ঠিকানা:</strong> জালাল কমপ্লেক্স, হাওড়া, পশ্চিমবঙ্গ।</p>
+                <div class="map-box">
+                    <i class="fas fa-map-layer-group" style="font-size: 30px; color: var(--secondary-color);"></i>
                     📍 গুগল ম্যাপ লোকেশন
                 </div>
             </div>
@@ -219,7 +334,7 @@
     </a>
 
     <footer>
-        <p>&copy; 2026 ল্যান্ড সリューション (Land Solution). সর্বস্বত্ব সংরক্ষিত।</p>
+        <p>&copy; 2026 ল্যান্ড সলিউশন (Land Solution). সর্বস্বত্ব সংরক্ষিত।</p>
     </footer>
 
 </body>
