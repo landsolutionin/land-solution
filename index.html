@@ -1,1 +1,1129 @@
+<!-- ========================= -->
+<!-- FINAL MASTER CODE PART-1 -->
+<!-- SEO + CSS + HEADER + HERO -->
+<!-- ========================= -->
 
+<!DOCTYPE html>
+<html lang="bn">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Land Solution | জমি, প্লট, গোডাউন ও ফ্যাক্টরি বিক্রয় - হাওড়া</title>
+
+<meta name="description" content="হাওড়া ও পশ্চিমবঙ্গে জমি, প্লট, গোডাউন, ফ্যাক্টরি এবং কমার্শিয়াল প্রপার্টি ক্রয়, বিক্রয় ও ভাড়ার বিশ্বস্ত প্রতিষ্ঠান Land Solution।">
+
+<meta name="keywords" content="Howrah Land Sale, Plot Sale Howrah, Factory Sale Howrah, Godown Rent Howrah, Commercial Property Howrah, Land Solution">
+
+<meta name="author" content="Land Solution">
+
+<meta name="robots" content="index, follow">
+
+<meta property="og:title" content="Land Solution">
+<meta property="og:description" content="হাওড়ার বিশ্বস্ত Land Consultant">
+<meta property="og:type" content="website">
+
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+--primary:#1ebd4d;
+--gold:#f5a623;
+--dark:#07120c;
+--card:#102017;
+--light:#f5f5f5;
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+font-family:'Hind Siliguri',sans-serif;
+background:linear-gradient(
+135deg,
+#021109 0%,
+#0a2a16 35%,
+#134a29 70%,
+#021109 100%
+);
+color:white;
+overflow-x:hidden;
+}
+
+.container{
+width:90%;
+max-width:1200px;
+margin:auto;
+}
+
+img{
+max-width:100%;
+display:block;
+}
+
+a{
+text-decoration:none;
+}
+
+.section{
+padding:80px 0;
+}
+
+.section-title{
+font-size:34px;
+margin-bottom:25px;
+border-left:5px solid var(--primary);
+padding-left:15px;
+}
+
+.card{
+background:rgba(255,255,255,.06);
+backdrop-filter:blur(10px);
+border-radius:20px;
+padding:25px;
+border:1px solid rgba(255,255,255,.08);
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
+}
+
+.btn{
+display:inline-block;
+padding:16px 32px;
+border-radius:12px;
+font-size:18px;
+font-weight:700;
+margin:5px;
+transition:.3s;
+}
+
+.btn:hover{
+transform:translateY(-3px);
+}
+
+.btn-whatsapp{
+background:#25D366;
+color:white;
+}
+
+.btn-call{
+background:#0f75bc;
+color:white;
+}
+
+.btn-gold{
+background:#f5a623;
+color:black;
+}
+
+header{
+position:sticky;
+top:0;
+z-index:999;
+background:rgba(0,0,0,.70);
+backdrop-filter:blur(15px);
+}
+
+.navbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 0;
+}
+
+.logo{
+font-size:32px;
+font-weight:700;
+color:#f5a623;
+}
+
+.menu{
+display:flex;
+gap:20px;
+}
+
+.menu a{
+color:white;
+font-weight:600;
+}
+
+/* HERO */
+
+.hero{
+padding:100px 0 50px;
+text-align:center;
+}
+
+.hero-box{
+max-width:900px;
+margin:auto;
+padding:40px;
+border-radius:25px;
+background:rgba(255,255,255,.05);
+border:1px solid rgba(255,255,255,.08);
+}
+
+.hero h1{
+font-size:60px;
+margin-bottom:15px;
+}
+
+.hero p{
+font-size:22px;
+line-height:1.8;
+color:#ddd;
+margin-bottom:25px;
+}
+
+/* LOCATION SEO */
+
+.location-text{
+font-size:20px;
+color:#f5a623;
+margin-top:20px;
+}
+
+/* PREMIUM SLIDER */
+
+.slider{
+position:relative;
+max-width:1200px;
+margin:auto;
+overflow:hidden;
+border-radius:25px;
+box-shadow:0 10px 30px rgba(0,0,0,.4);
+}
+
+.slides{
+display:flex;
+width:300%;
+animation:slide 12s infinite;
+}
+
+.slides img{
+width:100%;
+height:500px;
+object-fit:cover;
+}
+
+.slider-title{
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+background:rgba(0,0,0,.55);
+padding:20px 35px;
+border-radius:15px;
+font-size:32px;
+font-weight:bold;
+z-index:5;
+}
+
+@keyframes slide{
+
+0%{transform:translateX(0);}
+30%{transform:translateX(0);}
+
+33%{transform:translateX(-33.33%);}
+63%{transform:translateX(-33.33%);}
+
+66%{transform:translateX(-66.66%);}
+96%{transform:translateX(-66.66%);}
+
+100%{transform:translateX(0);}
+}
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:40px;
+}
+
+.hero p{
+font-size:18px;
+}
+
+.menu{
+display:none;
+}
+
+.slides img{
+height:250px;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="container navbar">
+
+<div class="logo">
+LAND SOLUTION
+</div>
+
+<div class="menu">
+
+<a href="#home">হোম</a>
+<a href="#about">আমাদের সম্পর্কে</a>
+<a href="#property">প্রপার্টি</a>
+<a href="#contact">যোগাযোগ</a>
+
+</div>
+
+</div>
+
+</header>
+
+<section class="hero" id="home">
+
+<div class="container">
+
+<div class="hero-box">
+
+<h1>LAND SOLUTION</h1>
+
+<p>
+জমি • প্লট • গোডাউন • ফ্যাক্টরি •
+কমার্শিয়াল প্রপার্টি
+</p>
+
+<a href="https://wa.me/917980471077" class="btn btn-whatsapp">
+WhatsApp
+</a>
+
+<a href="tel:+919163386754" class="btn btn-call">
+📞 Call 1
+</a>
+
+<a href="tel:+918777341778" class="btn btn-call">
+📞 Call 2
+</a>
+
+<div class="location-text">
+Howrah | Andul | Jangalpur | Sankrail | Domjur
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<div class="container">
+
+<div class="slider">
+
+<div class="slider-title">
+LAND SOLUTION
+</div>
+
+<div class="slides">
+
+<img src="IMAGE-1.jpg" alt="Howrah Land Property">
+
+<img src="IMAGE-2.jpg" alt="Factory For Sale Howrah">
+
+<img src="IMAGE-3.jpg" alt="Commercial Property Howrah">
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- END PART-1 -->
+  <!-- ========================= -->
+<!-- FINAL MASTER CODE PART-2 -->
+<!-- ABOUT + WHY US + OFFICE -->
+<!-- PROPERTY SECTION -->
+<!-- ========================= -->
+
+<section class="section" id="about">
+
+<div class="container">
+
+<h2 class="section-title">
+আমাদের সম্পর্কে
+</h2>
+
+<div class="card">
+
+<p style="font-size:18px;line-height:2;">
+
+Land Solution পশ্চিমবঙ্গের একটি বিশ্বস্ত
+রিয়েল এস্টেট ও ল্যান্ড কনসালটেন্সি প্রতিষ্ঠান।
+
+আমরা জমি, প্লট, গোডাউন, ফ্যাক্টরি,
+ইন্ডাস্ট্রিয়াল জমি এবং কমার্শিয়াল
+প্রপার্টি ক্রয়, বিক্রয় ও ভাড়ার
+পেশাদার পরিষেবা প্রদান করি।
+
+ডকুমেন্ট যাচাই, সম্পত্তি মূল্যায়ন,
+সাইট ভিজিট এবং লিগ্যাল গাইডেন্সের
+মাধ্যমে গ্রাহকদের সর্বোচ্চ সহায়তা
+প্রদান করা আমাদের লক্ষ্য।
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- WHY CHOOSE US -->
+
+<section class="section">
+
+<div class="container">
+
+<h2 class="section-title">
+কেন Land Solution?
+</h2>
+
+<div class="grid">
+
+<div class="card">
+
+<h3 style="color:#f5a623;">
+✔ ১০০% বিশ্বস্ত পরিষেবা
+</h3>
+
+<p>
+প্রতিটি সম্পত্তির ডকুমেন্ট যাচাই করে
+নিরাপদ লেনদেন নিশ্চিত করা হয়।
+</p>
+
+</div>
+
+<div class="card">
+
+<h3 style="color:#f5a623;">
+✔ সঠিক বাজার মূল্য
+</h3>
+
+<p>
+বর্তমান বাজারদর অনুযায়ী
+সর্বোত্তম মূল্য নিশ্চিত করা হয়।
+</p>
+
+</div>
+
+<div class="card">
+
+<h3 style="color:#f5a623;">
+✔ দ্রুত যোগাযোগ
+</h3>
+
+<p>
+কল, WhatsApp এবং সাইট ভিজিটের
+দ্রুত ব্যবস্থা করা হয়।
+</p>
+
+</div>
+
+<div class="card">
+
+<h3 style="color:#f5a623;">
+✔ লিগ্যাল সহায়তা
+</h3>
+
+<p>
+দলিল, পর্চা ও অন্যান্য
+আইনি কাগজপত্র যাচাইয়ে সহায়তা।
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- OFFICE TIME -->
+
+<section class="section">
+
+<div class="container">
+
+<h2 class="section-title">
+অফিস সময়
+</h2>
+
+<div class="grid">
+
+<div class="card">
+
+<h3 style="color:#25D366;">
+সোমবার - শুক্রবার
+</h3>
+
+<p>
+সকাল ১১:০০ টা
+থেকে
+বিকেল ৪:০০ টা
+</p>
+
+</div>
+
+<div class="card">
+
+<h3 style="color:#25D366;">
+শনিবার
+</h3>
+
+<p>
+পূর্ব নির্ধারিত অ্যাপয়েন্টমেন্ট অনুযায়ী
+</p>
+
+</div>
+
+<div class="card">
+
+<h3 style="color:#25D366;">
+রবিবার
+</h3>
+
+<p>
+অফিস বন্ধ
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- PROPERTY SECTION -->
+
+<section class="section" id="property">
+
+<div class="container">
+
+<h2 class="section-title">
+আমাদের প্রপার্টি
+</h2>
+
+<div class="grid">
+
+<!-- PROPERTY 1 -->
+
+<div class="card">
+
+<img
+src="IMAGE-1.jpg"
+alt="Industrial Land Howrah"
+style="
+height:250px;
+width:100%;
+object-fit:cover;
+border-radius:15px;">
+
+<h3 style="margin-top:15px;">
+ইন্ডাস্ট্রিয়াল জমি
+</h3>
+
+<p>
+লোকেশন: জঙ্গলপুর, হাওড়া
+</p>
+
+<p>
+ফ্যাক্টরি বা গুদাম তৈরির জন্য
+উপযুক্ত জমি।
+</p>
+
+</div>
+
+<!-- PROPERTY 2 -->
+
+<div class="card">
+
+<img
+src="IMAGE-2.jpg"
+alt="Commercial Property Howrah"
+style="
+height:250px;
+width:100%;
+object-fit:cover;
+border-radius:15px;">
+
+<h3 style="margin-top:15px;">
+কমার্শিয়াল প্রপার্টি
+</h3>
+
+<p>
+লোকেশন: আন্দুল, হাওড়া
+</p>
+
+<p>
+অফিস, শোরুম অথবা
+ব্যবসায়িক ব্যবহারের জন্য।
+</p>
+
+</div>
+
+<!-- PROPERTY 3 -->
+
+<div class="card">
+
+<img
+src="IMAGE-3.jpg"
+alt="Godown For Rent Howrah"
+style="
+height:250px;
+width:100%;
+object-fit:cover;
+border-radius:15px;">
+
+<h3 style="margin-top:15px;">
+গোডাউন / ওয়্যারহাউস
+</h3>
+
+<p>
+লোকেশন: সাঁকরাইল, হাওড়া
+</p>
+
+<p>
+স্টোরেজ ও লজিস্টিক
+ব্যবসার জন্য উপযুক্ত।
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- END PART-2 -->
+  <!-- ========================= -->
+<!-- FINAL MASTER CODE PART-3 -->
+<!-- VIDEO + PDF + REVIEW -->
+<!-- COUNTER + INQUIRY FORM -->
+<!-- ========================= -->
+
+<!-- VIDEO SECTION -->
+
+<section class="section">
+
+<div class="container">
+
+<h2 class="section-title">
+ভিডিও গ্যালারি
+</h2>
+
+<div class="card">
+
+<p style="margin-bottom:20px;">
+আমাদের সাম্প্রতিক প্রপার্টি ভিডিও দেখুন।
+</p>
+
+<div style="
+position:relative;
+padding-bottom:56.25%;
+height:0;
+overflow:hidden;
+border-radius:20px;">
+
+<iframe
+src="https://www.youtube.com/embed/VIDEO_ID"
+title="Land Solution Video"
+style="
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+border:none;">
+</iframe>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- PDF SECTION -->
+
+<section class="section">
+
+<div class="container">
+
+<h2 class="section-title">
+PDF ও ডকুমেন্টস
+</h2>
+
+<div class="grid">
+
+<div class="card">
+
+<h3>
+📄 সাইট প্ল্যান
+</h3>
+
+<p>
+প্রজেক্টের সাইট প্ল্যান ডাউনলোড করুন।
+</p>
+
+<a href="PDF-LINK-HERE"
+class="btn btn-gold">
+
+ডাউনলোড করুন
+
+</a>
+
+</div>
+
+<div class="card">
+
+<h3>
+📘 ব্রোশিওর
+</h3>
+
+<p>
+সম্পূর্ণ প্রজেক্ট ব্রোশিওর ডাউনলোড করুন।
+</p>
+
+<a href="BROCHURE-LINK"
+class="btn btn-gold">
+
+ডাউনলোড করুন
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- TESTIMONIALS -->
+
+<section class="section">
+
+<div class="container">
+
+<h2 class="section-title">
+গ্রাহকদের মতামত
+</h2>
+
+<div class="grid">
+
+<div class="card">
+
+⭐⭐⭐⭐⭐
+
+<p style="margin-top:15px;">
+খুব ভালো পরিষেবা এবং দ্রুত সাপোর্ট।
+</p>
+
+<h4 style="margin-top:15px;">
+রবিন দাস
+</h4>
+
+</div>
+
+<div class="card">
+
+⭐⭐⭐⭐⭐
+
+<p style="margin-top:15px;">
+ডকুমেন্ট ভেরিফিকেশনে অনেক সাহায্য পেয়েছি।
+</p>
+
+<h4 style="margin-top:15px;">
+সুমন ঘোষ
+</h4>
+
+</div>
+
+<div class="card">
+
+⭐⭐⭐⭐⭐
+
+<p style="margin-top:15px;">
+বিশ্বস্ত ও পেশাদার পরিষেবা।
+</p>
+
+<h4 style="margin-top:15px;">
+অমিত সেন
+</h4>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- COUNTER SECTION -->
+
+<section class="section">
+
+<div class="container">
+
+<h2 class="section-title">
+আমাদের অর্জন
+</h2>
+
+<div class="grid">
+
+<div class="card" style="text-align:center;">
+
+<h2 style="
+font-size:60px;
+color:#25D366;">
+5000+
+</h2>
+
+<p>
+সন্তুষ্ট গ্রাহক
+</p>
+
+</div>
+
+<div class="card" style="text-align:center;">
+
+<h2 style="
+font-size:60px;
+color:#f5a623;">
+1200+
+</h2>
+
+<p>
+সফল প্রপার্টি ডিল
+</p>
+
+</div>
+
+<div class="card" style="text-align:center;">
+
+<h2 style="
+font-size:60px;
+color:#0f75bc;">
+15+
+</h2>
+
+<p>
+বছরের অভিজ্ঞতা
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- INQUIRY FORM -->
+
+<section class="section" id="contact">
+
+<div class="container">
+
+<h2 class="section-title">
+ইনকোয়ারি ফর্ম
+</h2>
+
+<div class="card">
+
+<form onsubmit="sendToWhatsApp(event)">
+
+<div style="margin-bottom:15px;">
+
+<input
+type="text"
+id="name"
+placeholder="আপনার নাম"
+required
+style="
+width:100%;
+padding:15px;
+border-radius:10px;">
+
+</div>
+
+<div style="margin-bottom:15px;">
+
+<input
+type="tel"
+id="phone"
+placeholder="ফোন নম্বর"
+required
+style="
+width:100%;
+padding:15px;
+border-radius:10px;">
+
+</div>
+
+<div style="margin-bottom:15px;">
+
+<textarea
+id="message"
+rows="5"
+placeholder="আপনার বার্তা"
+style="
+width:100%;
+padding:15px;
+border-radius:10px;"></textarea>
+
+</div>
+
+<button
+type="submit"
+class="btn btn-whatsapp">
+
+WhatsApp এ পাঠান
+
+</button>
+
+</form>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- END PART-3 -->
+  <!-- ========================= -->
+<!-- FINAL MASTER CODE PART-4 -->
+<!-- OFFICE + MAP + FOOTER -->
+<!-- WHATSAPP + JAVASCRIPT -->
+<!-- ========================= -->
+
+<section class="section">
+
+<div class="container">
+
+<h2 class="section-title">
+আমাদের অফিস
+</h2>
+
+<div class="grid">
+
+<div class="card">
+
+<h3>📍 অফিস ঠিকানা</h3>
+
+<p style="line-height:2;">
+
+Jalal Complex<br>
+Jangalpur<br>
+Howrah<br>
+West Bengal - 711302
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>📞 যোগাযোগ</h3>
+
+<p style="line-height:2;">
+
+মোবাইল ১:
+<a href="tel:+919163386754">
+9163386754
+</a>
+
+<br><br>
+
+মোবাইল ২:
+<a href="tel:+918777341778">
+8777341778
+</a>
+
+<br><br>
+
+WhatsApp:
+<a href="https://wa.me/917980471077">
+7980471077
+</a>
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- GOOGLE MAP -->
+
+<section class="section">
+
+<div class="container">
+
+<h2 class="section-title">
+আমাদের অবস্থান
+</h2>
+
+<div class="card">
+
+<iframe
+src="https://maps.google.com/maps?q=Jangalpur%20Howrah%20West%20Bengal%20711302&t=&z=15&ie=UTF8&iwloc=&output=embed"
+width="100%"
+height="450"
+style="
+border:none;
+border-radius:20px;"
+loading="lazy">
+</iframe>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer style="
+background:#031008;
+padding:50px 20px;
+text-align:center;
+border-top:1px solid rgba(255,255,255,.1);">
+
+<h2 style="
+color:#f5a623;
+margin-bottom:15px;">
+
+LAND SOLUTION
+
+</h2>
+
+<p style="line-height:2;">
+
+জমি • প্লট • গোডাউন • ফ্যাক্টরি •
+কমার্শিয়াল প্রপার্টি
+
+</p>
+
+<p style="
+margin-top:15px;
+color:#ccc;">
+
+Howrah | Andul | Jangalpur |
+Sankrail | Domjur
+
+</p>
+
+<p style="
+margin-top:20px;
+font-size:14px;
+color:#999;">
+
+© 2026 Land Solution
+All Rights Reserved
+
+</p>
+
+</footer>
+
+<!-- FLOATING WHATSAPP -->
+
+<a
+href="https://wa.me/917980471077"
+target="_blank"
+style="
+position:fixed;
+right:20px;
+bottom:20px;
+width:65px;
+height:65px;
+background:#25D366;
+border-radius:50%;
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:30px;
+text-decoration:none;
+color:white;
+box-shadow:0 0 25px rgba(37,211,102,.5);
+z-index:9999;">
+
+💬
+
+</a>
+
+<!-- JAVASCRIPT -->
+
+<script>
+
+function sendToWhatsApp(event){
+
+event.preventDefault();
+
+var name =
+document.getElementById('name').value;
+
+var phone =
+document.getElementById('phone').value;
+
+var message =
+document.getElementById('message').value;
+
+var text =
+
+"নতুন ইনকোয়ারি%0A%0A" +
+
+"নাম: " + name +
+
+"%0Aফোন: " + phone +
+
+"%0Aবার্তা: " + message;
+
+window.open(
+
+"https://wa.me/917980471077?text=" + text,
+
+"_blank"
+
+);
+
+}
+
+</script>
+
+</body>
+</html>
+
+<!-- END PART-4 -->
