@@ -2,72 +2,129 @@
 <html lang="bn">
 <head>
     <meta charset="UTF-8">
-    <title>এয়ারম্যাক্স ল্যান্ড সলিউশন - ২৫ বছরের আস্থার প্রতীক</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> ল্যান্ড সলিউশন - আপনার বিশ্বস্ত ঠিকানা</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;700&display=swap');
-        body { font-family: 'Hind Siliguri', sans-serif; scroll-behavior: smooth; }
-        .overlay { background: rgba(0,0,0,0.7); backdrop-filter: blur(10px); }
+        /* মিউজিক আইকন এনিমেশন */
+        @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.1); } }
+        .music-pulse { animation: pulse 2s infinite; }
+        .hero-bg { background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80'); background-size: cover; background-position: center; }
     </style>
 </head>
 <body class="bg-gray-50">
 
-    <div id="startLayer" class="fixed inset-0 z-[100] flex flex-col items-center justify-center overlay text-white">
-        <h1 class="text-4xl font-bold mb-4">স্বাগতম এয়ারম্যাক্স ল্যান্ড সলিউশনে</h1>
-        <button onclick="playMusic()" class="bg-green-600 px-8 py-3 rounded-full text-xl font-bold animate-bounce">ওয়েবসাইটটিতে প্রবেশ করুন 🎶</button>
-    </div>
-    <audio id="bgAudio" loop><source src="bashi.mp3" type="audio/mpeg"></audio>
+    <audio id="bgAudio" loop>
+        <source src="bashi.mp3" type="audio/mpeg">
+    </audio>
 
-    <header class="bg-white p-6 text-center shadow-lg sticky top-0 z-40">
-        <img src="1000025552.png" class="mx-auto w-24 h-24 rounded-full shadow-md">
-        <h1 class="text-3xl font-bold text-green-900 mt-2">এয়ারম্যাক্স ল্যান্ড সলিউশন</h1>
-        <p class="text-gray-600">মানুষের সব প্রয়োজনের ঠিকানা একটাই - ল্যান্ড সলিউশন</p>
+    <!-- ওয়েলকাম ওভারলে -->
+    <div id="clickOverlay" onclick="startMusic()" class="fixed inset-0 z-[100] flex items-center justify-center bg-black/40 backdrop-blur-md cursor-pointer">
+        <div class="bg-white p-8 rounded-3xl shadow-2xl text-center music-pulse border-t-4 border-green-600">
+            <div class="mb-4 text-5xl">🏡</div>
+            <h2 class="text-3xl font-bold text-green-800">স্বাগতম!</h2>
+            <p class="mt-2 text-gray-600">এয়ারম্যাক্স ল্যান্ড সলিউশন-এ প্রবেশ করতে এখানে ক্লিক করুন</p>
+        </div>
+    </div>
+
+    <!-- হেডার/হিরো সেকশন -->
+    <header class="hero-bg text-white py-20 px-4 text-center shadow-lg">
+        <img src="1000025552.png" class="mx-auto w-32 h-32 object-cover rounded-full border-4 border-white mb-6 shadow-2xl">
+        <h1 class="text-4xl md:text-5xl font-bold mb-2">এয়ারম্যাক্স ল্যান্ড সলিউশন</h1>
+        <p class="text-xl italic text-green-200">সততাই আমাদের প্রতীক, ভরসার অন্য নাম</p>
     </header>
 
-    <section class="max-w-4xl mx-auto my-10 p-8 bg-gradient-to-r from-green-800 to-green-600 text-white rounded-2xl text-center shadow-2xl">
-        <h2 class="text-3xl font-bold mb-4">সততাই আমাদের প্রতীক</h2>
-        <p class="text-lg">দীর্ঘ ২৫ বছর ধরে আমরা ছোট-বড় কোম্পানি এবং ইনভেস্টারদের আস্থার সাথে কাজ করছি। প্রপার্টি সেল, রিসেল, ভাড়া বা লিজ—আপনার জমির একমাত্র ভরসা আমরাই। আমরা মানুষের পাশে আছি এবং থাকব।</p>
-    </section>
-
-    <section class="max-w-4xl mx-auto my-10 px-4">
-        <video controls class="w-full rounded-2xl shadow-xl">
-            <source src="170ff846-8207-4ef9-a71d-6f35bc794286-1_all_1013.mp4" type="video/mp4">
-        </video>
-    </section>
-
-    <section class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto px-4 mb-10">
-        <div class="bg-white p-6 rounded-xl shadow-lg border-b-4 border-green-600 text-center">
-            <h3 class="text-2xl font-bold">৫০+ কোম্পানির আস্থা</h3>
-            <p class="text-gray-600">দীর্ঘ ২৫ বছরের অভিজ্ঞতা ও পার্টনারশিপ</p>
-        </div>
-        <div class="bg-white p-6 rounded-xl shadow-lg border-b-4 border-green-600 text-center">
-            <h3 class="text-2xl font-bold">★★★★★ ৫০০০+ গ্রাহক</h3>
-            <p class="text-gray-600">আমাদের সেবায় সন্তুষ্ট ক্রেতা-বিক্রেতা</p>
+    <!-- পরিসংখ্যান সেকশন -->
+    <section class="max-w-6xl mx-auto -mt-12 px-4 mb-12">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="bg-white p-6 rounded-2xl shadow-xl text-center border-b-4 border-green-500">
+                <h3 class="text-3xl font-bold text-green-700">২৫+</h3>
+                <p class="text-gray-600 font-medium">বছরের অভিজ্ঞতা</p>
+            </div>
+            <div class="bg-white p-6 rounded-2xl shadow-xl text-center border-b-4 border-blue-500">
+                <h3 class="text-3xl font-bold text-blue-700">৫০+</h3>
+                <p class="text-gray-600 font-medium">সহযোগী কোম্পানি</p>
+            </div>
+            <div class="bg-white p-6 rounded-2xl shadow-xl text-center border-b-4 border-orange-500">
+                <h3 class="text-3xl font-bold text-orange-700">৫০০০+</h3>
+                <p class="text-gray-600 font-medium">সন্তুষ্ট গ্রাহক</p>
+            </div>
         </div>
     </section>
 
-    <section class="max-w-4xl mx-auto my-10 px-4">
-        <h2 class="text-2xl font-bold text-center mb-6">আমাদের লোকেশন</h2>
-        <div class="w-full h-80 rounded-2xl overflow-hidden shadow-2xl border-4 border-white">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3684.1147573046777!2d88.23!3d22.65!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f89!2sJangalpur!5e0!3m2!1sen!2sin!4v1!5m2!1sen!2sin" width="100%" height="100%" allowfullscreen loading="lazy"></iframe>
+    <!-- ভিডিও সেকশন -->
+    <section class="max-w-4xl mx-auto my-12 px-4">
+        <h2 class="text-2xl font-bold text-center mb-6 text-gray-800">আমাদের প্রজেক্ট ভিডিও</h2>
+        <div class="relative group">
+            <video controls class="w-full rounded-3xl shadow-2xl border-4 border-white">
+                <source src="170ff846-8207-4ef9-a71d-6f35bc794286-1_all_1013.mp4" type="video/mp4">
+            </video>
         </div>
     </section>
 
+    <!-- ইমেজ গ্যালারি সেকশন (নতুন যোগ করা হয়েছে) -->
+    <section class="max-w-6xl mx-auto my-16 px-4">
+        <h2 class="text-3xl font-bold text-center mb-2 text-gray-800">আমাদের গ্যালারি</h2>
+        <p class="text-center text-gray-500 mb-10">নিচে আমাদের কিছু সেরা ল্যান্ড প্রজেক্টের ছবি দেওয়া হলো</p>
+        
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+            <!-- ছবি ১ -->
+            <div class="group overflow-hidden rounded-2xl shadow-lg bg-white">
+                <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=600&q=80" alt="Land 1" class="w-full h-56 object-cover transition duration-500 group-hover:scale-110">
+                <div class="p-4">
+                    <h4 class="font-bold text-lg">উন্নত মানের জমি</h4>
+                    <p class="text-sm text-gray-500">প্রাকৃতিক ও মনোরম পরিবেশ</p>
+                </div>
+            </div>
+            <!-- ছবি ২ -->
+            <div class="group overflow-hidden rounded-2xl shadow-lg bg-white">
+                <img src="https://images.unsplash.com/photo-1592595821298-af38b39caee4?auto=format&fit=crop&w=600&q=80" alt="Land 2" class="w-full h-56 object-cover transition duration-500 group-hover:scale-110">
+                <div class="p-4">
+                    <h4 class="font-bold text-lg">আবাসিক প্লট</h4>
+                    <p class="text-sm text-gray-500">বাড়ি করার জন্য এখনই প্রস্তুত</p>
+                </div>
+            </div>
+            <!-- ছবি ৩ -->
+            <div class="group overflow-hidden rounded-2xl shadow-lg bg-white">
+                <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=600&q=80" alt="Land 3" class="w-full h-56 object-cover transition duration-500 group-hover:scale-110">
+                <div class="p-4">
+                    <h4 class="font-bold text-lg">কমার্শিয়াল ল্যান্ড</h4>
+                    <p class="text-sm text-gray-500">ব্যবসার জন্য সেরা লোকেশন</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ম্যাপ সেকশন -->
+    <section class="max-w-5xl mx-auto my-16 px-4">
+        <h2 class="text-2xl font-bold text-center mb-6">আমাদের অফিসের ঠিকানা</h2>
+        <div class="w-full h-96 rounded-3xl overflow-hidden shadow-2xl border-8 border-white">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3684.7176!2d88.29!3d22.60!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjLCsDM2JzAyLjIiTiA4OMKwMTcnMjQuMCJF!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+    </section>
+
+    <!-- কন্টাক্ট বাটন -->
     <div class="fixed bottom-6 right-6 flex flex-col gap-4 z-50">
-        <a href="https://wa.me/917980471077" class="bg-green-500 text-white p-5 rounded-full shadow-2xl hover:scale-110 transition">💬</a>
-        <a href="tel:+917980471077" class="bg-blue-600 text-white p-5 rounded-full shadow-2xl hover:scale-110 transition">📞</a>
+        <a href="https://wa.me/917980471077" class="bg-green-500 text-white p-4 rounded-full shadow-2xl hover:bg-green-600 transition-all transform hover:scale-110 flex items-center justify-center">
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.246 2.248 3.484 5.232 3.484 8.412-.003 6.557-5.338 11.892-11.893 11.892-1.997-.001-3.951-.5-5.688-1.448l-6.309 1.656zm6.29-4.143c1.589.943 3.385 1.44 5.216 1.441 5.45 0 9.885-4.436 9.888-9.886.002-2.64-1.03-5.123-2.906-6.999-1.875-1.875-4.359-2.907-6.999-2.908-5.45 0-9.886 4.436-9.888 9.887 0 1.884.53 3.723 1.53 5.334l-.999 3.649 3.738-.981z"/></svg>
+        </a>
+        <a href="tel:+917980471077" class="bg-blue-600 text-white p-4 rounded-full shadow-2xl hover:bg-blue-700 transition-all transform hover:scale-110 flex items-center justify-center">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+        </a>
     </div>
 
-    <footer class="bg-green-950 text-white py-10 text-center">
-        <p class="text-xl font-bold">সনু দা: 7980471077 | বাপ্পা: 8777341778</p>
-        <p>ঠিকানা: জালাল কমপ্লেক্স, ১ নম্বর গেট, জঙ্গলপুর, হাওড়া - ৭১১৩০২</p>
-        <p class="text-gray-400 mt-2">অফিস: সোম-শুক্র ১১টা-৬টা | শনি ১১টা-২টা | রবিবার ছুটি</p>
+    <!-- ফুটার -->
+    <footer class="bg-green-900 text-white py-8 text-center mt-12">
+        <p>© ২০২৪ এয়ারম্যাক্স ল্যান্ড সলিউশন | সর্বস্বত্ব সংরক্ষিত</p>
     </footer>
 
     <script>
-        function playMusic() {
-            document.getElementById('bgAudio').play();
-            document.getElementById('startLayer').style.display = 'none';
+        function startMusic() {
+            var audio = document.getElementById("bgAudio");
+            audio.play().catch(function(error) {
+                console.log("Audio play failed:", error);
+            });
+            document.getElementById("clickOverlay").style.display = "none";
         }
     </script>
 </body>
