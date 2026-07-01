@@ -3,162 +3,142 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Land Solution | Howrah - আপনার বিশ্বস্ত ঠিকানা</title>
-    <!-- Tailwind CSS for Modern Styling -->
+    <title>Land Solution | Howrah - আপনার বিশ্বস্ত প্রপার্টি পার্টনার</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts for Bengali -->
-    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Hind Siliguri', sans-serif; scroll-behavior: smooth; }
-        .hero-gradient { background: linear-gradient(rgba(10, 31, 15, 0.8), rgba(10, 31, 15, 0.8)), url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80'); background-size: cover; background-position: center; }
-        .glass-effect { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); }
+        body { font-family: 'Hind Siliguri', sans-serif; background-color: #f0fdf4; }
+        .hero-section {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1600&q=80');
+            background-size: cover; background-position: center;
+        }
+        .animate-bounce-slow { animation: bounce 3s infinite; }
     </style>
 </head>
-<body class="bg-gray-900 text-gray-100">
+<body class="text-gray-800">
 
-    <!-- মিউজিক প্লেয়ার (Background Music) -->
+    <!-- মিউজিক ফাইল -->
     <audio id="bgMusic" loop>
         <source src="bashi.mp3" type="audio/mpeg">
     </audio>
 
-    <!-- মিউজিক কন্ট্রোল ফ্লোটিং বাটন -->
-    <button onclick="toggleMusic()" id="musicBtn" class="fixed top-5 right-5 z-[100] bg-emerald-600 p-3 rounded-full shadow-lg border-2 border-white animate-pulse">
-        <span id="musicIcon">🎵 Play Music</span>
-    </button>
-
-    <!-- হিরো সেকশন -->
-    <header class="hero-gradient min-h-screen flex flex-col items-center justify-center text-center px-4 relative">
-        <div class="mb-6">
-            <img src="1000025552.png" alt="Logo" class="w-32 h-32 md:w-40 md:h-40 rounded-full border-4 border-emerald-500 shadow-2xl mx-auto object-cover">
+    <!-- শুরুতে একটি ওয়েলকাম স্ক্রিন (মিউজিক চালু করার জন্য এটি প্রয়োজন) -->
+    <div id="welcome-screen" class="fixed inset-0 z-[200] bg-green-900 flex items-center justify-center text-center p-6">
+        <div class="bg-white p-8 rounded-3xl shadow-2xl max-w-sm w-full">
+            <img src="1000025552.png" class="w-24 h-24 mx-auto rounded-full mb-4 border-4 border-green-500 shadow-lg">
+            <h2 class="text-2xl font-bold text-green-800 mb-2">স্বাগতম</h2>
+            <p class="text-gray-600 mb-6">এয়ারম্যাক্স ল্যান্ড সলিউশন-এর ওয়েবসাইটটি দেখতে নিচের বাটনে ক্লিক করুন</p>
+            <button onclick="startSite()" class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-8 rounded-full w-full shadow-lg transition-all transform hover:scale-105">
+                প্রবেশ করুন 🎶
+            </button>
         </div>
-        <h1 class="text-4xl md:text-6xl font-bold text-white mb-4">LAND SOLUTION</h1>
-        <p class="text-xl md:text-2xl text-emerald-400 font-semibold mb-8">জমি • প্লট • গোডাউন • কমার্শিয়াল প্রপার্টি</p>
-        
-        <div class="flex flex-wrap justify-center gap-4">
-            <a href="https://wa.me/917980471077" class="bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-3 rounded-full font-bold transition-all shadow-xl">WhatsApp করুন</a>
-            <a href="#contact" class="bg-white text-emerald-900 px-8 py-3 rounded-full font-bold transition-all shadow-xl">যোগাযোগ করুন</a>
-        </div>
-    </header>
-
-    <main class="container mx-auto px-4 py-16">
-        
-        <!-- অভিজ্ঞতা ও ব্লগ সেকশন -->
-        <section class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-20 items-center">
-            <div>
-                <h2 class="text-3xl font-bold text-emerald-400 mb-6 underline decoration-2 underline-offset-8">আমাদের পথচলা ও অভিজ্ঞতা</h2>
-                <div class="space-y-4 text-gray-300 text-lg leading-relaxed">
-                    <p>Land Solution গত ২৫ বছর ধরে হাওড়া এবং পার্শ্ববর্তী অঞ্চলে অত্যন্ত সততার সাথে রিয়েল এস্টেট সেবা প্রদান করে আসছে। আমরা শুধু জমি বিক্রি করি না, আমরা মানুষের স্বপ্ন পূরণের কারিগর।</p>
-                    <p>আমাদের ৫০টিরও বেশি বড় কোম্পানির সাথে সফলভাবে কাজ করার অভিজ্ঞতা রয়েছে। আমাদের মূলধন হলো গ্রাহকের বিশ্বাস।</p>
-                    <ul class="list-disc list-inside text-emerald-300">
-                        <li>নিষ্কর ও নির্ভেজাল জমি</li>
-                        <li>আইনি জটিলতা মুক্ত প্রপার্টি</li>
-                        <li>দ্রুত রেজিস্ট্রেশন সহায়তা</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="grid grid-cols-2 gap-4">
-                <img src="image1.jpg" class="rounded-2xl shadow-lg border-2 border-emerald-800" alt="Property">
-                <img src="image2.jpg" class="rounded-2xl shadow-lg border-2 border-emerald-800 mt-8" alt="Project">
-            </div>
-        </section>
-
-        <!-- পরিসংখ্যান কার্ড -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-20">
-            <div class="glass-effect p-8 rounded-3xl text-center">
-                <h3 class="text-4xl font-bold text-emerald-500 mb-2">২৫+</h3>
-                <p class="text-gray-400">বছরের অভিজ্ঞতা</p>
-            </div>
-            <div class="glass-effect p-8 rounded-3xl text-center">
-                <h3 class="text-4xl font-bold text-emerald-500 mb-2">৫০+</h3>
-                <p class="text-gray-400">সহযোগী কোম্পানি</p>
-            </div>
-            <div class="glass-effect p-8 rounded-3xl text-center">
-                <h3 class="text-4xl font-bold text-emerald-500 mb-2">৫০০০+</h3>
-                <p class="text-gray-400">সন্তুষ্ট গ্রাহক</p>
-            </div>
-        </div>
-
-        <!-- কাস্টমার রিভিউ সেকশন -->
-        <section class="mb-20">
-            <h2 class="text-3xl font-bold text-center mb-10 text-white">গ্রাহকদের মতামত</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div class="bg-gray-800 p-6 rounded-2xl italic border-l-4 border-emerald-500 text-gray-300">
-                    "আমি সনু দার থেকে একটি জমি কিনেছি। তাদের ব্যবহার এবং স্বচ্ছতা আমাকে মুগ্ধ করেছে।"
-                    <p class="mt-4 font-bold text-emerald-400 not-italic">- সুমিত মুখার্জি</p>
-                </div>
-                <div class="bg-gray-800 p-6 rounded-2xl italic border-l-4 border-emerald-500 text-gray-300">
-                    "বাপ্পা দা আমাদের খুব ভালো একটি কমার্শিয়াল জায়গা খুঁজে দিয়েছেন। ধন্যবাদ Land Solution।"
-                    <p class="mt-4 font-bold text-emerald-400 not-italic">- রাহুল সেন (Business Owner)</p>
-                </div>
-                <div class="bg-gray-800 p-6 rounded-2xl italic border-l-4 border-emerald-500 text-gray-300">
-                    "হাওড়াতে নির্ভেজাল জমি মানেই Land Solution। ২৫ বছর ধরে তারা সেরা সার্ভিস দিচ্ছে।"
-                    <p class="mt-4 font-bold text-emerald-400 not-italic">- অনিমেষ সরকার</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- ইনকোয়ারি ফর্ম -->
-        <section id="contact" class="max-w-3xl mx-auto bg-emerald-900/20 p-8 rounded-3xl border border-emerald-500/30">
-            <h2 class="text-2xl font-bold text-center mb-8">জিজ্ঞাস্য ফর্ম (Query Form)</h2>
-            <form onsubmit="sendToWhatsApp(event)" class="space-y-4">
-                <input type="text" id="custName" placeholder="আপনার নাম" required class="w-full bg-gray-800 border border-gray-700 p-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-500">
-                <input type="tel" id="custPhone" placeholder="আপনার ফোন নম্বর" required class="w-full bg-gray-800 border border-gray-700 p-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-500">
-                <textarea id="custMsg" placeholder="আপনি কী ধরনের প্রপার্টি খুঁজছেন?" rows="4" class="w-full bg-gray-800 border border-gray-700 p-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-500"></textarea>
-                <button type="submit" class="w-full bg-emerald-600 hover:bg-emerald-700 py-3 rounded-xl font-bold text-lg shadow-lg">WhatsApp এ পাঠান</button>
-            </form>
-        </section>
-    </main>
-
-    <!-- ফ্লোটিং অ্যাকশন বাটন (Call & WhatsApp) -->
-    <div class="fixed bottom-6 right-6 flex flex-col gap-4 z-50">
-        <!-- সনু দা -->
-        <a href="tel:+917980471077" class="bg-blue-600 text-white p-4 rounded-full shadow-2xl flex items-center group">
-            <span class="max-w-0 overflow-hidden group-hover:max-w-xs transition-all duration-500 mr-2">কল করুন (সনু দা)</span> 📞
-        </a>
-        <!-- বাপ্পা দা -->
-        <a href="tel:+918777341778" class="bg-blue-800 text-white p-4 rounded-full shadow-2xl flex items-center group">
-            <span class="max-w-0 overflow-hidden group-hover:max-w-xs transition-all duration-500 mr-2">কল করুন (বাপ্পা দা)</span> 📞
-        </a>
-        <!-- WhatsApp -->
-        <a href="https://wa.me/917980471077" class="bg-green-500 text-white p-4 rounded-full shadow-2xl flex items-center group">
-            <span class="max-w-0 overflow-hidden group-hover:max-w-xs transition-all duration-500 mr-2">WhatsApp চ্যাট</span> 💬
-        </a>
     </div>
 
-    <!-- ফুটার -->
-    <footer class="bg-black py-10 text-center border-t border-emerald-900/50">
-        <p class="text-lg font-bold text-emerald-500 mb-2 uppercase">Land Solution | Howrah</p>
-        <p class="text-gray-500 mb-4 text-sm">Jalal Complex, Howrah, West Bengal - 711302</p>
-        <p class="text-gray-400">© ২০২৪ Land Solution | অত্র প্রতিষ্ঠানটি রেজিস্টার্ড এবং স্বীকৃত।</p>
-    </footer>
+    <!-- মেইন কন্টেন্ট (শুরুতে হাইড থাকবে) -->
+    <div id="main-content" class="hidden">
+        
+        <!-- হেডার -->
+        <header class="hero-section h-[70vh] flex flex-col items-center justify-center text-white px-4">
+            <h1 class="text-5xl md:text-7xl font-bold mb-4 drop-shadow-2xl">LAND SOLUTION</h1>
+            <p class="text-xl md:text-2xl text-green-300 font-semibold mb-8">সততাই আমাদের পরিচয়, ২৫ বছরের নিরবচ্ছিন্ন সেবা</p>
+            <div class="flex gap-4">
+                <a href="#gallery" class="bg-green-600 px-6 py-3 rounded-lg font-bold">গ্যালারি দেখুন</a>
+                <a href="https://wa.me/917980471077" class="bg-white text-green-900 px-6 py-3 rounded-lg font-bold">যোগাযোগ করুন</a>
+            </div>
+        </header>
+
+        <!-- স্ট্যাটাস সেকশন -->
+        <section class="max-w-6xl mx-auto -mt-16 px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-white p-8 rounded-2xl shadow-xl text-center border-t-4 border-green-500">
+                    <span class="text-4xl">🏢</span>
+                    <h3 class="text-3xl font-bold mt-2">৫০+</h3>
+                    <p class="text-gray-500">সহযোগী কোম্পানি</p>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-xl text-center border-t-4 border-green-500">
+                    <span class="text-4xl">💎</span>
+                    <h3 class="text-3xl font-bold mt-2">২৫ বছর</h3>
+                    <p class="text-gray-500">অভিজ্ঞতা</p>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-xl text-center border-t-4 border-green-500">
+                    <span class="text-4xl">🤝</span>
+                    <h3 class="text-3xl font-bold mt-2">৫০০০+</h3>
+                    <p class="text-gray-500">সন্তুষ্ট কাস্টমার</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ইমেজ গ্যালারি -->
+        <section id="gallery" class="max-w-6xl mx-auto py-20 px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">আমাদের সেরা প্রজেক্ট সমূহ</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                <!-- Image 1 -->
+                <div class="group relative overflow-hidden rounded-2xl shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=600&q=80" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black/40 flex items-end p-4 opacity-0 group-hover:opacity-100 transition-opacity">
+                        <p class="text-white font-bold">আবাসিক প্লট - হাওড়া</p>
+                    </div>
+                </div>
+                <!-- Image 2 -->
+                <div class="group relative overflow-hidden rounded-2xl shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&fit=crop&w=600&q=80" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black/40 flex items-end p-4 opacity-0 group-hover:opacity-100 transition-opacity">
+                        <p class="text-white font-bold">বাগান বাড়ি প্রজেক্ট</p>
+                    </div>
+                </div>
+                <!-- Image 3 -->
+                <div class="group relative overflow-hidden rounded-2xl shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1592595821298-af38b39caee4?auto=format&fit=crop&w=600&q=80" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black/40 flex items-end p-4 opacity-0 group-hover:opacity-100 transition-opacity">
+                        <p class="text-white font-bold">কমার্শিয়াল প্রপার্টি</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- কল বাটন (সনু দা ও বাপ্পা দা) -->
+        <section class="bg-green-100 py-16 px-4 text-center">
+            <h2 class="text-2xl font-bold mb-8">সরাসরি কথা বলুন আমাদের সাথে</h2>
+            <div class="flex flex-wrap justify-center gap-6">
+                <a href="tel:+917980471077" class="bg-white p-6 rounded-2xl shadow-lg border-b-4 border-blue-600 w-64 transform hover:-translate-y-2 transition-all">
+                    <p class="text-blue-600 font-bold mb-2">সনু দা</p>
+                    <p class="text-xl font-bold">+91 7980471077</p>
+                    <p class="text-sm text-gray-500 mt-2">📞 কল করতে ক্লিক করুন</p>
+                </a>
+                <a href="tel:+918777341778" class="bg-white p-6 rounded-2xl shadow-lg border-b-4 border-blue-800 w-64 transform hover:-translate-y-2 transition-all">
+                    <p class="text-blue-800 font-bold mb-2">বাপ্পা দা</p>
+                    <p class="text-xl font-bold">+91 8777341778</p>
+                    <p class="text-sm text-gray-500 mt-2">📞 কল করতে ক্লিক করুন</p>
+                </a>
+            </div>
+        </section>
+
+        <!-- ফুটার -->
+        <footer class="bg-green-900 text-white py-12 px-4 text-center">
+            <p class="text-xl font-bold mb-2">LAND SOLUTION</p>
+            <p class="mb-4 text-green-200">জালাল কমপ্লেক্স, হাওড়া, পশ্চিমবঙ্গ - ৭১১৩০২</p>
+            <hr class="border-green-800 max-w-xs mx-auto mb-6">
+            <p class="text-sm opacity-70">© ২০২৪ সর্বস্বত্ব সংরক্ষিত | এয়ারম্যাক্স ল্যান্ড সলিউশন একটি রেজিস্টার্ড সংস্থা</p>
+        </div>
+
+        <!-- ফ্লোটিং হোয়াটসঅ্যাপ -->
+        <a href="https://wa.me/917980471077" class="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-2xl z-50 animate-bounce-slow">
+            <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.246 2.248 3.484 5.232 3.484 8.412-.003 6.557-5.338 11.892-11.893 11.892-1.997-.001-3.951-.5-5.688-1.448l-6.309 1.656zm6.29-4.143c1.589.943 3.385 1.44 5.216 1.441 5.45 0 9.885-4.436 9.888-9.886.002-2.64-1.03-5.123-2.906-6.999-1.875-1.875-4.359-2.907-6.999-2.908-5.45 0-9.886 4.436-9.888 9.887 0 1.884.53 3.723 1.53 5.334l-.999 3.649 3.738-.981z"/></svg>
+        </a>
+
+    </div>
 
     <script>
-        // মিউজিক কন্ট্রোল
-        const audio = document.getElementById('bgMusic');
-        const musicIcon = document.getElementById('musicIcon');
-        let isPlaying = false;
-
-        function toggleMusic() {
-            if (isPlaying) {
-                audio.pause();
-                musicIcon.innerText = "🎵 Play Music";
-            } else {
-                audio.play();
-                musicIcon.innerText = "⏸ Pause Music";
-            }
-            isPlaying = !isPlaying;
-        }
-
-        // হোয়াটসঅ্যাপে ফর্ম পাঠানো
-        function sendToWhatsApp(e) {
-            e.preventDefault();
-            const name = document.getElementById('custName').value;
-            const phone = document.getElementById('custPhone').value;
-            const msg = document.getElementById('custMsg').value;
+        function startSite() {
+            // মিউজিক চালু করা
+            const music = document.getElementById('bgMusic');
+            music.play().catch(e => console.log("Audio Error:", e));
             
-            const text = `নতুন ইনকোয়ারি:%0Aনাম: ${name}%0Aফোন: ${phone}%0Aবার্তা: ${msg}`;
-            window.open(`https://wa.me/917980471077?text=${text}`);
+            // স্ক্রিন পরিবর্তন
+            document.getElementById('welcome-screen').classList.add('hidden');
+            document.getElementById('main-content').classList.remove('hidden');
         }
     </script>
+
 </body>
 </html>
