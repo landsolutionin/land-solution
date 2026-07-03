@@ -4,489 +4,75 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Land Solution</title>
-
 <script src="https://cdn.tailwindcss.com"></script>
-
 <style>
-html{scroll-behavior:smooth;}
-body{background:#f8fafc;font-family:sans-serif;}
-
-.hero-bg{
-background:
-linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.65)),
-url("https://images.unsplash.com/photo-1500382017468-9049fed747ef");
-background-size:cover;
-background-position:center;
-}
-
-.float{
-animation:float 3s ease-in-out infinite;
-}
-
-@keyframes float{
-0%{transform:translateY(0);}
-50%{transform:translateY(-8px);}
-100%{transform:translateY(0);}
-}
-
-.modal{display:none;}
-.modal.active{display:flex;}
+  html{scroll-behavior:smooth;}
+  /* ইন্ডিয়ান ফ্ল্যাগ কালার আভা যুক্ত ব্যাকগ্রাউন্ড */
+  body{
+    background: linear-gradient(135deg, #fff5e6 0%, #ffffff 50%, #e6ffe6 100%);
+    font-family:sans-serif;
+  }
+  .hero-bg{
+    background: linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.65)), url("https://images.unsplash.com/photo-1500382017468-9049fed747ef");
+    background-size:cover;
+    background-position:center;
+  }
+  .modal{display:none;}.modal.active{display:flex;}
 </style>
-
 </head>
 <body>
 
-<!-- AUDIO -->
-<audio id="bgMusic" loop>
-<source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3">
-</audio>
-
-<audio id="waTone">
-<source src="https://assets.mixkit.co/active_storage/sfx/2869/2869-preview.mp3">
-</audio>
-
-<!-- HEADER -->
-<header class="bg-green-700 text-white p-4 sticky top-0 z-50 shadow-lg">
-<div class="max-w-7xl mx-auto flex justify-between items-center">
-<h1 class="text-xl md:text-3xl font-bold">LAND SOLUTION</h1>
-</div>
-</header>
-
-<!-- HERO -->
-<section class="hero-bg min-h-screen flex items-center justify-center text-center px-4">
-<div class="text-white">
-
-<h2 class="text-3xl md:text-6xl font-bold mb-4">
-আপনার জমি, আমাদের দায়িত্ব
-</h2>
-
-<p class="text-lg md:text-2xl mb-8">
-বিশ্বাসযোগ্যতা • স্বচ্ছতা • সঠিক ডিল
-</p>
-
-<div class="flex flex-wrap justify-center gap-4">
-<button onclick="playMusic()" class="bg-green-600 px-6 py-3 rounded-full font-bold">
-▶ Music
-</button>
-
-<button onclick="pauseMusic()" class="bg-white text-black px-6 py-3 rounded-full font-bold">
-⏸ Pause
-</button>
-
-<a href="#contact" class="bg-blue-600 px-6 py-3 rounded-full font-bold">
-যোগাযোগ
-</a>
-</div>
-
-</div>
-</section>
-
-<!-- ABOUT -->
-<section class="py-20 px-6 bg-white">
-<div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-10">
-
-<div>
-<h2 class="text-3xl font-bold text-green-700 mb-4">আমাদের সম্পর্কে</h2>
-<p class="text-lg leading-8 text-gray-700">
-Land Solution একটি বিশ্বস্ত land consultancy platform।
-আমরা জমি, factory, godown, rent, buy/sell এর কাজ করি।
-আমাদের প্রতিটি ডিল legal verification এর মাধ্যমে হয়।
-</p>
-</div>
-
-<div>
-<img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa" class="rounded-xl shadow-xl w-full">
-</div>
-
-</div>
-</section>
-
-<!-- WHY CHOOSE -->
-<section class="py-20 px-6 bg-green-50">
-<div class="max-w-6xl mx-auto">
-<h2 class="text-3xl text-center font-bold text-green-700 mb-8">
-কেন LAND SOLUTION?
-</h2>
-
-<div class="grid md:grid-cols-2 gap-10 text-lg leading-8">
-<div>
-✔ ১০+ বছরের অভিজ্ঞতা<br><br>
-✔ নিরাপদ ডকুমেন্টেশন<br><br>
-✔ দ্রুত সঠিক ডিল<br><br>
-✔ সঠিক লোকেশন নির্বাচন<br><br>
-✔ সৎ পরিষেবা
-</div>
-
-<section class="py-20 px-6 bg-white">
-<div class="max-w-7xl mx-auto">
-
-<h2 class="text-3xl md:text-4xl font-bold text-center text-green-700 mb-14">
-আপনার বিনিয়োগ, আমাদের দায়িত্ব
-</h2>
-
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-
-<!-- Card 1 -->
-<div class="bg-white border-l-4 border-green-600 p-6 rounded-2xl shadow-lg hover:shadow-2xl transition duration-300">
-<div class="text-4xl mb-4">📈</div>
-<h3 class="font-bold text-xl mb-3">ভবিষ্যতের সুরক্ষা</h3>
-<p class="text-gray-700 leading-8">
-আপনার আজকের সঞ্চয়, আগামীকালের নিশ্চিন্ত জীবন।
-</p>
-</div>
-
-<!-- Card 2 -->
-<div class="bg-white border-l-4 border-green-600 p-6 rounded-2xl shadow-lg hover:shadow-2xl transition duration-300">
-<div class="text-4xl mb-4">🛡️</div>
-<h3 class="font-bold text-xl mb-3">নিরাপদ বিনিয়োগ</h3>
-<p class="text-gray-700 leading-8">
-আমরা মানুষের ভবিষ্যৎ বিনিয়োগকে নিরাপদ করতে কাজ করি।
-</p>
-</div>
-
-<!-- Card 3 -->
-<div class="bg-white border-l-4 border-green-600 p-6 rounded-2xl shadow-lg hover:shadow-2xl transition duration-300">
-<div class="text-4xl mb-4">💼</div>
-<h3 class="font-bold text-xl mb-3">পেশাদার পরামর্শ</h3>
-<p class="text-gray-700 leading-8">
-আপনার প্রতিটি সিদ্ধান্তকে সফল করতে আমরা সঠিক গাইডলাইন দিই।
-</p>
-</div>
-
-<!-- Card 4 -->
-<div class="bg-white border-l-4 border-green-600 p-6 rounded-2xl shadow-lg hover:shadow-2xl transition duration-300">
-<div class="text-4xl mb-4">🏡</div>
-<h3 class="font-bold text-xl mb-3">স্বপ্নের বাস্তবতা</h3>
-<p class="text-gray-700 leading-8">
-আমরা আপনার স্বপ্নকে বাস্তবে রূপ দেওয়ার পথপ্রদর্শক।
-</p>
-</div>
-
-<!-- Card 5 -->
-<div class="bg-white border-l-4 border-green-600 p-6 rounded-2xl shadow-lg hover:shadow-2xl transition duration-300">
-<div class="text-4xl mb-4">📊</div>
-<h3 class="font-bold text-xl mb-3">সঠিক পরিকল্পনা</h3>
-<p class="text-gray-700 leading-8">
-প্রতিটি বিনিয়োগের পেছনে থাকুক সুনির্দিষ্ট পরিকল্পনা।
-</p>
-</div>
-
-<!-- Card 6 -->
-<div class="bg-white border-l-4 border-green-600 p-6 rounded-2xl shadow-lg hover:shadow-2xl transition duration-300">
-<div class="text-4xl mb-4">🤝</div>
-<h3 class="font-bold text-xl mb-3">বিশ্বাস ও স্বচ্ছতা</h3>
-<p class="text-gray-700 leading-8">
-আর্থিক পরিকল্পনায় স্বচ্ছতা এবং সততা আমাদের কাজের প্রধান ভিত্তি।
-</p>
-</div>
-
-<!-- Card 7 -->
-<div class="bg-white border-l-4 border-green-600 p-6 rounded-2xl shadow-lg hover:shadow-2xl transition duration-300">
-<div class="text-4xl mb-4">👨‍👩‍👧</div>
-<h3 class="font-bold text-xl mb-3">পরিবারের ভবিষ্যৎ</h3>
-<p class="text-gray-700 leading-8">
-আপনার সন্তানদের উজ্জ্বল ভবিষ্যৎ গড়ার প্রথম পদক্ষেপ আমাদের সাথে।
-</p>
-</div>
-
-<!-- Card 8 -->
-<div class="bg-white border-l-4 border-green-600 p-6 rounded-2xl shadow-lg hover:shadow-2xl transition duration-300">
-<div class="text-4xl mb-4">🔒</div>
-<h3 class="font-bold text-xl mb-3">তথ্যের নিরাপত্তা</h3>
-<p class="text-gray-700 leading-8">
-গোপনীয়তা এবং তথ্যের সুরক্ষা আমাদের সর্বোচ্চ অগ্রাধিকার।
-</p>
-</div>
-
-<!-- Card 9 -->
-<div class="bg-green-700 text-white p-6 rounded-2xl shadow-xl hover:scale-105 transition duration-300">
-<div class="text-4xl mb-4">⭐</div>
-<h3 class="font-bold text-xl mb-3">চূড়ান্ত অঙ্গীকার</h3>
-<p class="leading-8">
-বিনিয়োগ করুন আমাদের সাথে, থাকুন নিশ্চিন্তে।
-</p>
-</div>
-
-</div>
-
-</div>
-</section>
-
-<!-- TRUST STATS -->
-<section class="py-20 px-6 bg-white">
-<div class="max-w-6xl mx-auto grid md:grid-cols-4 gap-8 text-center">
-<div class="shadow-lg p-6 rounded-xl"><h2 class="text-4xl font-bold text-green-700">500+</h2><p>Happy Clients</p></div>
-<div class="shadow-lg p-6 rounded-xl"><h2 class="text-4xl font-bold text-green-700">300+</h2><p>Successful Deals</p></div>
-<div class="shadow-lg p-6 rounded-xl"><h2 class="text-4xl font-bold text-green-700">50+</h2><p>Projects</p></div>
-<div class="shadow-lg p-6 rounded-xl"><h2 class="text-4xl font-bold text-green-700">24/7</h2><p>Support</p></div>
-</div>
-</section>
-
-<!-- REVIEWS SECTION -->
-<section class="py-20 px-6 bg-gray-50">
-  <div class="max-w-5xl mx-auto">
-    <h2 class="text-4xl text-center font-bold text-green-800 mb-12">গ্রাহকরা যা বলছেন</h2>
-    
-    <div id="reviewList" class="grid md:grid-cols-2 gap-6">
-      <!-- একটি রিভিউ কার্ড -->
-      <div class="bg-white p-8 rounded-2xl shadow-sm border border-green-100 hover:shadow-md transition-shadow">
-        <div class="text-yellow-400 mb-4 text-xl">★★★★★</div>
-        <p class="text-gray-600 italic mb-6">"জমি কেনা-বেচার পুরো প্রক্রিয়াটি ল্যান্ড সলিউশন খুব সহজ এবং স্বচ্ছভাবে সম্পন্ন করেছে। তাদের সার্ভিস এক কথায় অসাধারণ।"</p>
-        <div class="font-semibold text-green-700">— রহিম আহমেদ</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- REVIEW FORM -->
-<section class="py-20 px-6">
-  <div class="max-w-2xl mx-auto bg-green-50 p-8 md:p-12 rounded-3xl">
-    <h2 class="text-3xl font-bold text-green-800 mb-2">আপনার অভিজ্ঞতা জানান</h2>
-    <p class="text-gray-600 mb-8">আপনার মতামত আমাদের সেবার মান উন্নয়নে সাহায্য করবে।</p>
-
-    <form id="reviewForm" class="space-y-4">
-      <input id="reviewName" class="w-full border-0 p-4 rounded-xl shadow-inner" placeholder="আপনার নাম">
-      <textarea id="reviewText" rows="4" class="w-full border-0 p-4 rounded-xl shadow-inner" placeholder="আপনার মূল্যবান মতামত লিখুন"></textarea>
-      <button class="w-full bg-green-600 hover:bg-green-700 text-white py-4 rounded-xl font-bold transition-all">মতামত জমা দিন</button>
-    </form>
-  </div>
-</section>
-<!-- UPDATED PREMIUM INQUIRY FORM -->
-<section id="contact" class="py-20 px-6 bg-gradient-to-br from-white via-green-50 to-white">
-
-<div class="max-w-6xl mx-auto">
-
-<div class="grid md:grid-cols-2 bg-white rounded-3xl shadow-2xl overflow-hidden">
-
-<!-- Left Side -->
-<div class="bg-green-700 text-white p-10 flex flex-col justify-center">
-
-<h2 class="text-4xl font-bold mb-6">
-আপনার প্রয়োজন আমাদের জানান
-</h2>
-
-<p class="leading-8 text-green-100 text-lg">
-আপনার জমি, ভাড়া, কেনাবেচা, বিনিয়োগ অথবা legal consultation সংক্রান্ত যেকোনো inquiry আমাদের পাঠান।
-আমরা দ্রুত যোগাযোগ করব।
-</p>
-
-<div class="mt-8 space-y-4 text-lg">
-<p>✔ Secure Process</p>
-<p>✔ Trusted Consultancy</p>
-<p>✔ Fast Communication</p>
-<p>✔ Verified Property Support</p>
-</div>
-
-</div>
-
-<!-- Right Side Form -->
-<div class="p-8 md:p-10">
-
-<h3 class="text-3xl font-bold text-green-700 mb-8">
-Inquiry Form
-</h3>
-
-<form id="contactForm" class="space-y-6">
-
-<!-- Name -->
-<div>
-<label class="font-semibold text-gray-700 mb-2 block">
-Full Name
-</label>
-<input 
-id="name"
-type="text"
-placeholder="আপনার নাম লিখুন"
-class="w-full border border-gray-300 rounded-xl p-4 focus:ring-2 focus:ring-green-600 outline-none">
-</div>
-
-<!-- Phone -->
-<div>
-<label class="font-semibold text-gray-700 mb-2 block">
-Phone Number
-</label>
-<input 
-id="phone"
-type="tel"
-placeholder="মোবাইল নম্বর"
-class="w-full border border-gray-300 rounded-xl p-4 focus:ring-2 focus:ring-green-600 outline-none">
-</div>
-
-<!-- Property Intent -->
-<div>
-<label class="font-semibold text-gray-700 mb-2 block">
-Property Intent
-</label>
-
-<select 
-id="purpose"
-class="w-full border border-gray-300 rounded-xl p-4 focus:ring-2 focus:ring-green-600 outline-none">
-
-<option>Buying Land</option>
-<option>Renting Property</option>
-<option>Selling Land</option>
-<option>Commercial Space</option>
-<option>Factory Lease</option>
-<option>Godown Rent</option>
-<option>Property Investment</option>
-<option>Legal Verification</option>
-
-</select>
-</div>
-
-<!-- Budget -->
-<div>
-<label class="font-semibold text-gray-700 mb-2 block">
-Budget Range
-</label>
-<input 
-id="budget"
-type="text"
-placeholder="আপনার বাজেট"
-class="w-full border border-gray-300 rounded-xl p-4 focus:ring-2 focus:ring-green-600 outline-none">
-</div>
-
-<!-- Preferred Location -->
-<div>
-<label class="font-semibold text-gray-700 mb-2 block">
-Preferred Location
-</label>
-<input 
-id="location"
-type="text"
-placeholder="পছন্দের লোকেশন"
-class="w-full border border-gray-300 rounded-xl p-4 focus:ring-2 focus:ring-green-600 outline-none">
-</div>
-
-<!-- Details -->
-<div>
-<label class="font-semibold text-gray-700 mb-2 block">
-Additional Details
-</label>
-<textarea 
-id="message"
-rows="5"
-placeholder="আপনার বিস্তারিত লিখুন"
-class="w-full border border-gray-300 rounded-xl p-4 focus:ring-2 focus:ring-green-600 outline-none"></textarea>
-</div>
-
-<!-- Button -->
-<button 
-type="submit"
-class="w-full bg-green-700 hover:bg-green-800 text-white py-4 rounded-xl font-bold text-lg transition duration-300">
-Send Inquiry on WhatsApp
-</button>
-
-</form>
-
-</div>
-
-</div>
-</div>
-
-</section>
-<!-- FLOATING -->
-<div class="fixed right-5 bottom-5 flex flex-col gap-3 z-50">
-
-<button onclick="openModal()"
-class="bg-blue-600 text-white px-6 py-4 rounded-full shadow-xl font-bold">
-📞 Call Now
-</button>
-
-<a onclick="playWATone()"
-href="https://wa.me/message/QAO2M2PEBMPXP1"
-target="_blank"
-class="bg-green-500 text-white px-6 py-4 rounded-full shadow-xl font-bold">
-💬 WhatsApp
-</a>
-
-</div>
-
-<!-- CALL MODAL -->
-<div id="callModal" class="modal fixed inset-0 bg-black bg-opacity-60 justify-center items-center z-50">
-
-<div class="bg-white p-8 rounded-2xl text-center w-80">
-
-<h3 class="text-2xl font-bold mb-6">কল করুন</h3>
-
-<a href="tel:+918777341778"
-class="block bg-blue-600 text-white p-4 rounded-lg mb-4">
-বাপ্পা
-</a>
-
-<a href="tel:+917980471077"
-class="block bg-green-600 text-white p-4 rounded-lg mb-4">
-সনু দা
-</a>
-
-<button onclick="closeModal()"
-class="bg-red-500 text-white px-6 py-2 rounded-lg">
-Close
-</button>
-
-</div>
-</div>
-
-<footer class="bg-green-700 text-white text-center py-6">
-© 2026 LAND SOLUTION
-</footer>
-
 <script>
-function playMusic(){
-document.getElementById("bgMusic").play();
-}
+  // ১. পেজ লোড হওয়ার সাথে সাথে সেভ করা রিভিউগুলো দেখানোর জন্য
+  window.onload = function() {
+    const savedReviews = localStorage.getItem("myReviews");
+    if (savedReviews && document.getElementById("reviewList")) {
+      document.getElementById("reviewList").innerHTML = savedReviews;
+    }
+  };
 
-function pauseMusic(){
-document.getElementById("bgMusic").pause();
-}
+  // ২. রিভিউ সাবমিট লজিক
+  const reviewForm = document.getElementById("reviewForm");
+  if (reviewForm) {
+    reviewForm.addEventListener("submit", function(e) {
+      e.preventDefault();
+      let name = document.getElementById("reviewName").value;
+      let text = document.getElementById("reviewText").value;
 
-function playWATone(){
-document.getElementById("waTone").play();
-}
+      if (name && text) {
+        const newReview = document.createElement("div");
+        newReview.className = "bg-white p-8 rounded-2xl shadow-sm border border-green-100";
+        newReview.innerHTML = `
+          <div class="text-yellow-400 mb-4 text-xl">★★★★★</div>
+          <p class="text-gray-600 italic mb-6">"${text}"</p>
+          <div class="font-semibold text-green-700">— ${name}</div>
+        `;
+        document.getElementById("reviewList").appendChild(newReview);
+        localStorage.setItem("myReviews", document.getElementById("reviewList").innerHTML);
+        reviewForm.reset();
+      } else {
+        alert("অনুগ্রহ করে আপনার নাম এবং মতামত লিখুন।");
+      }
+    });
+  }
 
-function openModal(){
-document.getElementById("callModal").classList.add("active");
-}
+  // ৩. ইনকুয়ারি ফর্ম লজিক
+  document.getElementById("contactForm").addEventListener("submit",function(e){
+    e.preventDefault();
+    let name = document.getElementById("name").value;
+    let phone = document.getElementById("phone").value;
+    let message = document.getElementById("message").value;
+    let fullMessage = `নতুন Inquiry এসেছে:\n\nনাম: ${name}\nমোবাইল: ${phone}\nবার্তা: ${message}`;
+    let encoded = encodeURIComponent(fullMessage);
+    window.open(`https://wa.me/message/QAO2M2PEBMPXP1?text=${encoded}`,"_blank");
+  });
 
-function closeModal(){
-document.getElementById("callModal").classList.remove("active");
-}
-
-document.getElementById("reviewForm").addEventListener("submit",function(e){
-e.preventDefault();
-
-let name=document.getElementById("reviewName").value;
-let text=document.getElementById("reviewText").value;
-
-let review=document.createElement("div");
-review.className="bg-white p-5 rounded-xl shadow";
-review.innerHTML=`⭐⭐⭐⭐⭐<br>"${text}"<br><br>- ${name}`;
-
-document.getElementById("reviewList").appendChild(review);
-this.reset();
-});
-
-document.getElementById("contactForm").addEventListener("submit",function(e){
-e.preventDefault();
-
-let name=document.getElementById("name").value;
-let phone=document.getElementById("phone").value;
-let message=document.getElementById("message").value;
-
-let fullMessage=`নতুন Inquiry এসেছে:
-
-নাম: ${name}
-মোবাইল: ${phone}
-বার্তা: ${message}`;
-
-let encoded=encodeURIComponent(fullMessage);
-
-window.open(`https://wa.me/message/QAO2M2PEBMPXP1?text=${encoded}`,"_blank");
-});
-
-window.onbeforeunload=function(){
-return "রিভিউ দিয়ে যান।";
-}
+  // অন্যান্য ফাংশন
+  function playMusic(){ document.getElementById("bgMusic").play(); }
+  function pauseMusic(){ document.getElementById("bgMusic").pause(); }
+  function playWATone(){ document.getElementById("waTone").play(); }
+  function openModal(){ document.getElementById("callModal").classList.add("active"); }
+  function closeModal(){ document.getElementById("callModal").classList.remove("active"); }
 </script>
 
 </body>
