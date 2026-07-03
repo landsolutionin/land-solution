@@ -5,50 +5,102 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Land Solution</title>
 <script src="https://cdn.tailwindcss.com"></script>
+
 <style>
-  html{scroll-behavior:smooth;}
-  /* ইন্ডিয়ান ফ্ল্যাগ কালার আভা যুক্ত ব্যাকগ্রাউন্ড */
-  body{
-    background: linear-gradient(135deg, #fff5e6 0%, #ffffff 50%, #e6ffe6 100%);
-    font-family:sans-serif;
-  }
-  .hero-bg{
-    background: linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.65)), url("https://images.unsplash.com/photo-1500382017468-9049fed747ef");
-    background-size:cover;
-    background-position:center;
-  }
-  .modal{display:none;}.modal.active{display:flex;}
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: linear-gradient(135deg, #fff5e6 0%, #ffffff 50%, #e6ffe6 100%);
+  font-family: sans-serif;
+}
+
+.hero-bg {
+  background: linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.65)),
+  url("https://images.unsplash.com/photo-1500382017468-9049fed747ef");
+  background-size: cover;
+  background-position: center;
+}
+
+.modal {
+  display: none;
+}
+
+.modal.active {
+  display: flex;
+}
 </style>
 </head>
 <body>
 
-<script>
-  // ১. পেজ লোড হওয়ার সাথে সাথে সেভ করা রিভিউগুলো দেখানোর জন্য
-  window.onload = function() {
-    const savedReviews = localStorage.getItem("myReviews");
-    if (savedReviews && document.getElementById("reviewList")) {
-      document.getElementById("reviewList").innerHTML = savedReviews;
-    }
-  };
+<!-- Review Section -->
+<div id="reviewList"></div>
 
-  // ২. রিভিউ সাবমিট লজিক
+<form id="reviewForm">
+  <input type="text" id="reviewName" placeholder="আপনার নাম">
+  <textarea id="reviewText" placeholder="আপনার মতামত"></textarea>
+  <button type="submit">Submit Review</button>
+</form>
+
+<!-- Contact Form -->
+<form id="contactForm">
+  <input type="text" id="name" placeholder="নাম">
+  <input type="text" id="phone" placeholder="মোবাইল">
+  <textarea id="message" placeholder="বার্তা"></textarea>
+  <button type="submit">Send</button>
+</form>
+
+<!-- Audio -->
+<audio id="bgMusic" loop>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="waTone">
+  <source src="tone.mp3" type="audio/mpeg">
+</audio>
+
+<!-- Modal -->
+<div id="callModal" class="modal">
+  <div>
+    <button onclick="closeModal()">Close</button>
+  </div>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  // Load saved reviews
+  const savedReviews = localStorage.getItem("myReviews");
+  const reviewList = document.getElementById("reviewList");
+
+  if (savedReviews && reviewList) {
+    reviewList.innerHTML = savedReviews;
+  }
+
+  // Review form
   const reviewForm = document.getElementById("reviewForm");
+
   if (reviewForm) {
-    reviewForm.addEventListener("submit", function(e) {
+    reviewForm.addEventListener("submit", function (e) {
       e.preventDefault();
-      let name = document.getElementById("reviewName").value;
-      let text = document.getElementById("reviewText").value;
+
+      let name = document.getElementById("reviewName").value.trim();
+      let text = document.getElementById("reviewText").value.trim();
 
       if (name && text) {
         const newReview = document.createElement("div");
-        newReview.className = "bg-white p-8 rounded-2xl shadow-sm border border-green-100";
+        newReview.className =
+          "bg-white p-8 rounded-2xl shadow-sm border border-green-100";
+
         newReview.innerHTML = `
           <div class="text-yellow-400 mb-4 text-xl">★★★★★</div>
           <p class="text-gray-600 italic mb-6">"${text}"</p>
           <div class="font-semibold text-green-700">— ${name}</div>
         `;
-        document.getElementById("reviewList").appendChild(newReview);
-        localStorage.setItem("myReviews", document.getElementById("reviewList").innerHTML);
+
+        reviewList.appendChild(newReview);
+        localStorage.setItem("myReviews", reviewList.innerHTML);
         reviewForm.reset();
       } else {
         alert("অনুগ্রহ করে আপনার নাম এবং মতামত লিখুন।");
@@ -56,23 +108,55 @@
     });
   }
 
-  // ৩. ইনকুয়ারি ফর্ম লজিক
-  document.getElementById("contactForm").addEventListener("submit",function(e){
-    e.preventDefault();
-    let name = document.getElementById("name").value;
-    let phone = document.getElementById("phone").value;
-    let message = document.getElementById("message").value;
-    let fullMessage = `নতুন Inquiry এসেছে:\n\nনাম: ${name}\nমোবাইল: ${phone}\nবার্তা: ${message}`;
-    let encoded = encodeURIComponent(fullMessage);
-    window.open(`https://wa.me/message/QAO2M2PEBMPXP1?text=${encoded}`,"_blank");
-  });
+  // Contact form
+  const contactForm = document.getElementById("contactForm");
 
-  // অন্যান্য ফাংশন
-  function playMusic(){ document.getElementById("bgMusic").play(); }
-  function pauseMusic(){ document.getElementById("bgMusic").pause(); }
-  function playWATone(){ document.getElementById("waTone").play(); }
-  function openModal(){ document.getElementById("callModal").classList.add("active"); }
-  function closeModal(){ document.getElementById("callModal").classList.remove("active"); }
+  if (contactForm) {
+    contactForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      let name = document.getElementById("name").value.trim();
+      let phone = document.getElementById("phone").value.trim();
+      let message = document.getElementById("message").value.trim();
+
+      let fullMessage =
+        `নতুন Inquiry এসেছে:\n\nনাম: ${name}\nমোবাইল: ${phone}\nবার্তা: ${message}`;
+
+      let encoded = encodeURIComponent(fullMessage);
+
+      window.open(
+        `https://wa.me/message/QAO2M2PEBMPXP1?text=${encoded}`,
+        "_blank"
+      );
+    });
+  }
+});
+
+// Functions
+function playMusic() {
+  const music = document.getElementById("bgMusic");
+  if (music) music.play();
+}
+
+function pauseMusic() {
+  const music = document.getElementById("bgMusic");
+  if (music) music.pause();
+}
+
+function playWATone() {
+  const tone = document.getElementById("waTone");
+  if (tone) tone.play();
+}
+
+function openModal() {
+  const modal = document.getElementById("callModal");
+  if (modal) modal.classList.add("active");
+}
+
+function closeModal() {
+  const modal = document.getElementById("callModal");
+  if (modal) modal.classList.remove("active");
+}
 </script>
 
 </body>
