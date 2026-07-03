@@ -3,159 +3,345 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Land Solution</title>
+<title>LAND SOLUTION</title>
+
 <script src="https://cdn.tailwindcss.com"></script>
 
 <style>
-html {
-  scroll-behavior: smooth;
+html{scroll-behavior:smooth;}
+
+body{
+font-family:sans-serif;
+background: linear-gradient(135deg,#FF9933,#ffffff,#138808);
+background-attachment: fixed;
 }
 
-body {
-  background: linear-gradient(135deg, #fff5e6 0%, #ffffff 50%, #e6ffe6 100%);
-  font-family: sans-serif;
+.hero-bg{
+background:
+linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.65)),
+url("https://images.unsplash.com/photo-1500382017468-9049fed747ef");
+background-size:cover;
+background-position:center;
 }
 
-.hero-bg {
-  background: linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.65)),
-  url("https://images.unsplash.com/photo-1500382017468-9049fed747ef");
-  background-size: cover;
-  background-position: center;
+.float{
+animation:float 3s ease-in-out infinite;
 }
 
-.modal {
-  display: none;
+@keyframes float{
+0%{transform:translateY(0);}
+50%{transform:translateY(-8px);}
+100%{transform:translateY(0);}
 }
 
-.modal.active {
-  display: flex;
+.hover-box{
+transition:0.4s;
 }
+
+.hover-box:hover{
+transform:translateY(-8px);
+box-shadow:0 20px 40px rgba(0,0,0,.15);
+}
+
+.modal{display:none;}
+.modal.active{display:flex;}
 </style>
 </head>
 <body>
 
-<!-- Review Section -->
-<div id="reviewList"></div>
-
-<form id="reviewForm">
-  <input type="text" id="reviewName" placeholder="আপনার নাম">
-  <textarea id="reviewText" placeholder="আপনার মতামত"></textarea>
-  <button type="submit">Submit Review</button>
-</form>
-
-<!-- Contact Form -->
-<form id="contactForm">
-  <input type="text" id="name" placeholder="নাম">
-  <input type="text" id="phone" placeholder="মোবাইল">
-  <textarea id="message" placeholder="বার্তা"></textarea>
-  <button type="submit">Send</button>
-</form>
-
-<!-- Audio -->
+<!-- AUDIO -->
 <audio id="bgMusic" loop>
-  <source src="music.mp3" type="audio/mpeg">
+<source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3">
 </audio>
 
 <audio id="waTone">
-  <source src="tone.mp3" type="audio/mpeg">
+<source src="https://assets.mixkit.co/active_storage/sfx/2869/2869-preview.mp3">
 </audio>
 
-<!-- Modal -->
-<div id="callModal" class="modal">
-  <div>
-    <button onclick="closeModal()">Close</button>
-  </div>
+<!-- HEADER -->
+<header class="bg-green-700 text-white sticky top-0 z-50 shadow-lg">
+<div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+<h1 class="text-2xl md:text-3xl font-bold">LAND SOLUTION</h1>
+</div>
+</header>
+
+<!-- HERO -->
+<section class="hero-bg min-h-screen flex items-center justify-center text-center px-4">
+<div class="text-white">
+<h2 class="text-4xl md:text-6xl font-bold mb-4">আপনার জমি, আমাদের দায়িত্ব</h2>
+<p class="text-lg md:text-2xl mb-8">বিশ্বাসযোগ্যতা • স্বচ্ছতা • সঠিক ডিল</p>
+
+<div class="flex flex-wrap justify-center gap-4">
+<button onclick="playMusic()" class="bg-green-600 px-6 py-3 rounded-full font-bold hover:scale-105 transition">
+▶ Music
+</button>
+
+<button onclick="pauseMusic()" class="bg-white text-black px-6 py-3 rounded-full font-bold hover:scale-105 transition">
+⏸ Pause
+</button>
+
+<a href="#contact" class="bg-blue-600 px-6 py-3 rounded-full font-bold hover:scale-105 transition">
+যোগাযোগ
+</a>
+</div>
+</div>
+</section>
+
+<!-- ABOUT -->
+<section class="py-20 px-6 bg-white">
+<div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-10">
+<div>
+<h2 class="text-3xl font-bold text-green-700 mb-4">আমাদের সম্পর্কে</h2>
+<p class="text-lg leading-8 text-gray-700">
+Land Solution একটি বিশ্বস্ত land consultancy platform।
+আমরা জমি, factory, godown, rent, buy/sell এর কাজ করি।
+আমাদের প্রতিটি ডিল legal verification এর মাধ্যমে হয়।
+</p>
 </div>
 
+<div>
+<img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa"
+class="rounded-xl shadow-xl w-full hover-box">
+</div>
+</div>
+</section>
+
+<!-- TRUST CARDS -->
+<section class="py-20 px-6 bg-white">
+<div class="max-w-7xl mx-auto">
+<h2 class="text-3xl font-bold text-center text-green-700 mb-14">
+আপনার বিনিয়োগ, আমাদের দায়িত্ব
+</h2>
+
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+<div class="bg-white border-l-4 border-green-600 p-6 rounded-2xl hover-box">
+<div class="text-4xl mb-4">📈</div>
+<h3 class="font-bold text-xl mb-3">ভবিষ্যতের সুরক্ষা</h3>
+<p>আপনার আজকের সঞ্চয়, আগামীকালের নিশ্চিন্ত জীবন।</p>
+</div>
+
+<div class="bg-white border-l-4 border-green-600 p-6 rounded-2xl hover-box">
+<div class="text-4xl mb-4">🛡️</div>
+<h3 class="font-bold text-xl mb-3">নিরাপদ বিনিয়োগ</h3>
+<p>আমরা মানুষের ভবিষ্যৎ বিনিয়োগকে নিরাপদ করতে কাজ করি।</p>
+</div>
+
+<div class="bg-white border-l-4 border-green-600 p-6 rounded-2xl hover-box">
+<div class="text-4xl mb-4">💼</div>
+<h3 class="font-bold text-xl mb-3">পেশাদার পরামর্শ</h3>
+<p>আপনার প্রতিটি সিদ্ধান্তকে সফল করতে আমরা গাইডলাইন দিই।</p>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- REVIEWS -->
+<section class="py-20 px-6 bg-green-50">
+<div class="max-w-6xl mx-auto">
+<h2 class="text-3xl text-center font-bold text-green-700 mb-8">গ্রাহকদের মতামত</h2>
+
+<div id="reviewList" class="space-y-6">
+<div class="bg-white p-5 rounded-xl shadow hover-box">
+⭐⭐⭐⭐⭐<br>
+"খুব ভালো সার্ভিস।"
+</div>
+</div>
+</div>
+</section>
+
+<!-- REVIEW FORM -->
+<section class="py-20 px-6 bg-white">
+<div class="max-w-3xl mx-auto">
+<h2 class="text-3xl text-center font-bold text-green-700 mb-8">আপনার মতামত</h2>
+
+<form id="reviewForm" class="space-y-4">
+<input id="reviewName" class="w-full border p-4 rounded-lg" placeholder="আপনার নাম">
+<textarea id="reviewText" rows="5" class="w-full border p-4 rounded-lg" placeholder="আপনার মতামত লিখুন"></textarea>
+<button class="w-full bg-green-700 text-white py-4 rounded-lg hover:bg-green-800 transition">Submit Review</button>
+</form>
+</div>
+</section>
+
+<!-- CONTACT FORM -->
+<section id="contact" class="py-20 px-6 bg-white">
+<div class="max-w-5xl mx-auto bg-white rounded-3xl shadow-2xl overflow-hidden grid md:grid-cols-2">
+
+<div class="bg-green-700 text-white p-8">
+<h2 class="text-3xl font-bold mb-6">আপনার প্রয়োজন জানিয়ে দিন</h2>
+<p class="leading-8">আমাদের টিম দ্রুত আপনার সাথে যোগাযোগ করবে।</p>
+</div>
+
+<div class="p-8 space-y-5">
+
+<form id="contactForm" class="space-y-5">
+
+<input id="name" class="w-full border p-4 rounded-xl" placeholder="আপনার নাম">
+
+<input id="phone" class="w-full border p-4 rounded-xl" placeholder="মোবাইল নম্বর">
+
+<select id="purpose" class="w-full border p-4 rounded-xl">
+<option>Buying Land</option>
+<option>Renting Property</option>
+<option>Selling Land</option>
+<option>Commercial Space</option>
+<option>Factory Lease</option>
+<option>Godown Rent</option>
+<option>Property Investment</option>
+<option>Legal Verification</option>
+</select>
+
+<input id="budget" class="w-full border p-4 rounded-xl" placeholder="আপনার বাজেট">
+
+<input id="location" class="w-full border p-4 rounded-xl" placeholder="পছন্দের লোকেশন">
+
+<select id="priority" class="w-full border p-4 rounded-xl">
+<option>Urgent</option>
+<option>Within 7 Days</option>
+<option>Within 30 Days</option>
+<option>Flexible</option>
+</select>
+
+<textarea id="message" rows="5" class="w-full border p-4 rounded-xl" placeholder="আপনার বার্তা"></textarea>
+
+<button class="w-full bg-green-700 text-white py-4 rounded-xl hover:bg-green-800 transition">
+WhatsApp এ Inquiry পাঠান
+</button>
+
+</form>
+</div>
+</div>
+</section>
+
+<!-- LOCATION -->
+<section class="py-20 px-6 bg-white">
+<div class="max-w-6xl mx-auto">
+<h2 class="text-3xl text-center font-bold text-green-700 mb-8">আমাদের লোকেশন</h2>
+
+<iframe class="w-full rounded-xl shadow-lg"
+height="400"
+src="https://maps.google.com/maps?q=Jangalpur Jalal Complex Howrah West Bengal 711302&t=&z=17&ie=UTF8&iwloc=&output=embed">
+</iframe>
+</div>
+</section>
+
+<!-- FLOATING BUTTONS -->
+<div class="fixed right-5 bottom-5 flex flex-col gap-3 z-50">
+
+<button onclick="openModal()"
+class="bg-blue-600 text-white px-6 py-4 rounded-full shadow-xl font-bold float">
+📞 Call Now
+</button>
+
+<a onclick="playWATone()"
+href="https://wa.me/message/QAO2M2PEBMPXP1"
+target="_blank"
+class="bg-green-500 text-white px-6 py-4 rounded-full shadow-xl font-bold float">
+💬 WhatsApp
+</a>
+
+</div>
+
+<!-- CALL MODAL -->
+<div id="callModal" class="modal fixed inset-0 bg-black bg-opacity-60 justify-center items-center z-50">
+<div class="bg-white p-8 rounded-2xl text-center w-80">
+
+<h3 class="text-2xl font-bold mb-6">কল করুন</h3>
+
+<a href="tel:+918777341778"
+class="block bg-blue-600 text-white p-4 rounded-lg mb-4">
+বাপ্পা
+</a>
+
+<a href="tel:+917980471077"
+class="block bg-green-600 text-white p-4 rounded-lg mb-4">
+সনু দা
+</a>
+
+<button onclick="closeModal()"
+class="bg-red-500 text-white px-6 py-2 rounded-lg">
+Close
+</button>
+
+</div>
+</div>
+
+<!-- FOOTER -->
+<footer class="bg-green-800 text-white py-10 px-6 text-center">
+<h2 class="text-2xl font-bold mb-4">LAND SOLUTION</h2>
+<p>জঙ্গলপুর জালাল কমপ্লেক্স, হাওড়া, ওয়েস্ট বেঙ্গল - 711302</p>
+<p class="mt-4">© 2026 LAND SOLUTION | All Rights Reserved</p>
+</footer>
+
 <script>
-document.addEventListener("DOMContentLoaded", function () {
+function playMusic(){
+document.getElementById("bgMusic").play();
+}
 
-  // Load saved reviews
-  const savedReviews = localStorage.getItem("myReviews");
-  const reviewList = document.getElementById("reviewList");
+function pauseMusic(){
+document.getElementById("bgMusic").pause();
+}
 
-  if (savedReviews && reviewList) {
-    reviewList.innerHTML = savedReviews;
-  }
+function playWATone(){
+document.getElementById("waTone").play();
+}
 
-  // Review form
-  const reviewForm = document.getElementById("reviewForm");
+function openModal(){
+document.getElementById("callModal").classList.add("active");
+}
 
-  if (reviewForm) {
-    reviewForm.addEventListener("submit", function (e) {
-      e.preventDefault();
+function closeModal(){
+document.getElementById("callModal").classList.remove("active");
+}
 
-      let name = document.getElementById("reviewName").value.trim();
-      let text = document.getElementById("reviewText").value.trim();
+document.getElementById("reviewForm").addEventListener("submit",function(e){
+e.preventDefault();
 
-      if (name && text) {
-        const newReview = document.createElement("div");
-        newReview.className =
-          "bg-white p-8 rounded-2xl shadow-sm border border-green-100";
+let name=document.getElementById("reviewName").value;
+let text=document.getElementById("reviewText").value;
 
-        newReview.innerHTML = `
-          <div class="text-yellow-400 mb-4 text-xl">★★★★★</div>
-          <p class="text-gray-600 italic mb-6">"${text}"</p>
-          <div class="font-semibold text-green-700">— ${name}</div>
-        `;
+let review=document.createElement("div");
+review.className="bg-white p-5 rounded-xl shadow hover-box";
+review.innerHTML=`⭐⭐⭐⭐⭐<br>"${text}"<br><br>- ${name}`;
 
-        reviewList.appendChild(newReview);
-        localStorage.setItem("myReviews", reviewList.innerHTML);
-        reviewForm.reset();
-      } else {
-        alert("অনুগ্রহ করে আপনার নাম এবং মতামত লিখুন।");
-      }
-    });
-  }
-
-  // Contact form
-  const contactForm = document.getElementById("contactForm");
-
-  if (contactForm) {
-    contactForm.addEventListener("submit", function (e) {
-      e.preventDefault();
-
-      let name = document.getElementById("name").value.trim();
-      let phone = document.getElementById("phone").value.trim();
-      let message = document.getElementById("message").value.trim();
-
-      let fullMessage =
-        `নতুন Inquiry এসেছে:\n\nনাম: ${name}\nমোবাইল: ${phone}\nবার্তা: ${message}`;
-
-      let encoded = encodeURIComponent(fullMessage);
-
-      window.open(
-        `https://wa.me/message/QAO2M2PEBMPXP1?text=${encoded}`,
-        "_blank"
-      );
-    });
-  }
+document.getElementById("reviewList").appendChild(review);
+this.reset();
 });
 
-// Functions
-function playMusic() {
-  const music = document.getElementById("bgMusic");
-  if (music) music.play();
-}
+document.getElementById("contactForm").addEventListener("submit",function(e){
+e.preventDefault();
 
-function pauseMusic() {
-  const music = document.getElementById("bgMusic");
-  if (music) music.pause();
-}
+let name=document.getElementById("name").value;
+let phone=document.getElementById("phone").value;
+let purpose=document.getElementById("purpose").value;
+let budget=document.getElementById("budget").value;
+let location=document.getElementById("location").value;
+let priority=document.getElementById("priority").value;
+let message=document.getElementById("message").value;
 
-function playWATone() {
-  const tone = document.getElementById("waTone");
-  if (tone) tone.play();
-}
+let fullMessage=`নতুন Inquiry এসেছে:
 
-function openModal() {
-  const modal = document.getElementById("callModal");
-  if (modal) modal.classList.add("active");
-}
+নাম: ${name}
+মোবাইল: ${phone}
+উদ্দেশ্য: ${purpose}
+বাজেট: ${budget}
+লোকেশন: ${location}
+প্রয়োজন: ${priority}
 
-function closeModal() {
-  const modal = document.getElementById("callModal");
-  if (modal) modal.classList.remove("active");
+বার্তা:
+${message}`;
+
+let encoded=encodeURIComponent(fullMessage);
+
+window.open(
+`https://wa.me/message/QAO2M2PEBMPXP1?text=${encoded}`,
+"_blank"
+);
+});
+
+window.onbeforeunload=function(){
+return "রিভিউ দিয়ে যান।";
 }
 </script>
 
