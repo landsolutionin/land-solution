@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LAND SOLUTION - Premium Real Estate Consultancy</title>
+<title>LAND SOLUTION - Air Max Land Seller Group</title>
 
 <script src="https://cdn.tailwindcss.com"></script>
 
@@ -35,7 +35,6 @@ animation:float 3s ease-in-out infinite;
 100%{transform:translateY(0);}
 }
 
-/* International Live Animation & Glassmorphism */
 .reveal-section {
 opacity: 0;
 transform: translateY(30px);
@@ -79,7 +78,6 @@ box-shadow: 0 20px 40px rgba(255,153,51,0.18);
 border-left-color: #138808;
 }
 
-/* Pulse Glow Effect for Buttons */
 .pulse-glow {
 box-shadow: 0 0 0 0 rgba(19, 136, 8, 0.4);
 animation: pulseGlow 2s infinite;
@@ -90,9 +88,36 @@ animation: pulseGlow 2s infinite;
 70% { box-shadow: 0 0 0 15px rgba(19, 136, 8, 0); }
 100% { box-shadow: 0 0 0 0 rgba(19, 136, 8, 0); }
 }
+
+/* Welcome Overlay Styles */
+#welcomeOverlay {
+position: fixed;
+inset: 0;
+background: linear-gradient(135deg, rgba(20,20,20,0.95), rgba(10,40,20,0.95));
+z-index: 99999;
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+color: white;
+text-align: center;
+padding: 20px;
+}
 </style>
 </head>
 <body>
+
+<!-- WELCOME OVERLAY (3rd & 4th Image Concept: Spiritual/Indian Theme & Representative) -->
+<div id="welcomeOverlay">
+<div class="max-w-xl bg-white/10 backdrop-blur-md p-8 rounded-3xl border border-white/20 shadow-2xl">
+<img src="https://i.ibb.co/3m3v7y2/namaste.png" onerror="this.src='https://images.unsplash.com/photo-1544005313-94ddf0286df2'" class="w-32 h-32 mx-auto rounded-full object-cover mb-4 border-4 border-orange-400 shadow-lg float" alt="Representative">
+<h1 class="text-3xl font-extrabold mb-2 text-orange-300">নমস্কার, LAND SOLUTION-এ স্বাগতম!</h1>
+<p class="text-sm text-gray-200 mb-4">Air Max Land Seller Group-এর পক্ষ سے আমি আপনার ডিজিটাল প্রতিনিধি। আমাদের প্রজেক্ট এবং সার্ভিস সম্পর্কে জানতে নিচে ক্লিক করুন।</p>
+<button onclick="enterWebsite()" class="bg-gradient-to-r from-orange-500 to-green-600 text-white px-8 py-3.5 rounded-full font-bold text-lg shadow-xl hover:scale-105 transition">
+প্রবেশ করুন (Enter Website)
+</button>
+</div>
+</div>
 
 <!-- AUDIO -->
 <audio id="bgMusic" loop>
@@ -106,7 +131,10 @@ animation: pulseGlow 2s infinite;
 <!-- HEADER -->
 <header class="bg-green-700 text-white sticky top-0 z-50 shadow-xl backdrop-blur-md bg-opacity-95">
 <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-<h1 class="text-2xl md:text-3xl font-extrabold tracking-wider">LAND SOLUTION</h1>
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-orange-500 flex items-center justify-center font-black text-xl shadow-md float">AM</div>
+<h1 class="text-2xl md:text-3xl font-extrabold tracking-wider">LAND SOLUTION <span class="text-xs text-orange-300 block font-normal">Air Max Land Seller Group</span></h1>
+</div>
 </div>
 </header>
 
@@ -136,12 +164,11 @@ animation: pulseGlow 2s infinite;
 <section class="py-24 px-6 indian-gradient-bg reveal-section">
 <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
 <div>
-<h2 class="text-3xl md:text-4xl font-bold text-green-800 mb-6">আমাদের সম্পর্কে</h2>
-<p class="text-lg leading-relaxed text-gray-700">
-Land Solution একটি বিশ্বস্ত land consultancy platform।
-আমরা জমি, factory, godown, rent, buy/sell এর কাজ করি।
-আমাদের প্রতিটি ডিল legal verification এর মাধ্যমে হয়।
+<h2 class="text-3xl md:text-4xl font-bold text-green-800 mb-6">আমাদের সম্পর্কে (Air Max Land Seller Group)</h2>
+<p class="text-lg leading-relaxed text-gray-700 mb-4">
+Land Solution হলো আমাদের মাদার কোম্পানি **Air-Max Land Seller Group**-এর একটি বিশ্বস্ত কনসালটেন্সি প্ল্যাটফর্ম। আমরা বহু বছর ধরে হাওড়া ও পশ্চিমবঙ্গ জুড়ে অত্যন্ত সুনামের সাথে জমি ক্রয়-বিক্রয়, কমার্শিয়াল স্পেস এবং ইন্ডাস্ট্রিয়াল লিজের কাজ সফলভাবে পরিচালনা করে আসছি।
 </p>
+<p class="text-gray-600">আমাদের প্রতিটি ডিল শতভাগ আইনি যাচাই-বাছাই (Legal Verification) এবং স্বচ্ছতার সাথে সম্পন্ন করা হয়।</p>
 </div>
 
 <div class="overflow-hidden rounded-2xl shadow-2xl">
@@ -160,22 +187,53 @@ class="rounded-2xl w-full hover-box transform hover:scale-105 transition duratio
 
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-<div class="bg-white border-l-4 border-orange-500 p-8 rounded-2xl hover-box shadow-md border border-gray-100">
+<!-- ভবিষ্যতে যে সুরক্ষা (Expanded & Detailed) -->
+<div class="bg-white border-l-4 border-orange-500 p-8 rounded-2xl hover-box shadow-md border border-gray-100 flex flex-col justify-between">
+<div>
 <div class="text-5xl mb-4 p-3 bg-orange-50 w-fit rounded-xl">📈</div>
 <h3 class="font-bold text-2xl mb-3 text-gray-800">ভবিষ্যতের সুরক্ষা</h3>
-<p class="text-gray-600 leading-relaxed">আপনার আজকের সঞ্চয়, আগামীকালের নিশ্চিন্ত জীবন।</p>
+<p class="text-gray-600 leading-relaxed mb-4">আপনার আজকের সঞ্চয়, আগামীকালের নিশ্চিন্ত জীবন ও সুরক্ষিত ভবিষ্যৎ।</p>
+
+<ul class="text-sm text-gray-700 space-y-2 border-t pt-4 border-gray-100">
+<li class="flex items-center gap-2">✅ দীর্ঘমেয়াদী লাভজনক প্রপার্টি প্ল্যান</li>
+<li class="flex items-center gap-2">✅ পারিবারিক ও আর্থিক নিরাপত্তা নিশ্চিতকরণ</li>
+<li class="flex items-center gap-2">✅ প্রজন্মের জন্য সুরক্ষিত রিয়েল এস্টেট সম্পদ</li>
+<li class="flex items-center gap-2">✅ রিস্ক-ফ্রি ও হাই রিটার্ন প্রজেক্ট সিলেকশন</li>
+</ul>
+</div>
+<button onclick="openFeatureModal('ভবিষ্যতের সুরক্ষা', 'আমাদের দীর্ঘমেয়াদী পরিকল্পনা হলো আপনার কষ্টার্জিত অর্থকে এমন জায়গায় বিনিয়োগ করানো যা ভবিষ্যতে বহুগুণ বৃদ্ধি পায়। আমরা প্রতিটি প্রপার্টির মার্কেট ভ্যালু এবং ভবিষ্যৎ গ্রোথ অ্যানালিসিস করে ক্লায়েন্টদের বেস্ট ডিল প্রদান করি।')" class="mt-6 text-sm font-bold text-orange-600 hover:text-orange-700 text-left">বিস্তারিত জানুন →</button>
 </div>
 
-<div class="bg-white border-l-4 border-green-600 p-8 rounded-2xl hover-box shadow-md border border-gray-100">
+<!-- নিরাপদ বিনিয়োগ -->
+<div class="bg-white border-l-4 border-green-600 p-8 rounded-2xl hover-box shadow-md border border-gray-100 flex flex-col justify-between">
+<div>
 <div class="text-5xl mb-4 p-3 bg-green-50 w-fit rounded-xl">🛡️</div>
 <h3 class="font-bold text-2xl mb-3 text-gray-800">নিরাপদ বিনিয়োগ</h3>
-<p class="text-gray-600 leading-relaxed">আমরা মানুষের ভবিষ্যৎ বিনিয়োগকে নিরাপদ করতে কাজ করি।</p>
+<p class="text-gray-600 leading-relaxed mb-4">আমরা মানুষের ভবিষ্যৎ বিনিয়োগকে ১০০% নিরাপদ করতে কাজ করি।</p>
+<ul class="text-sm text-gray-700 space-y-2 border-t pt-4 border-gray-100">
+<li class="flex items-center gap-2">✅ সম্পূর্ণ আইনি ও দলিলপত্র যাচাই</li>
+<li class="flex items-center gap-2">✅ খতিয়ান, দাগ নম্বর ও মিউটেশন ক্লিয়ারেন্স</li>
+<li class="flex items-center gap-2">✅ কোনো রকম আইনি জটিলতা বা লিজ ঝামেলা নেই</li>
+<li class="flex items-center gap-2">✅ নিরাপদ ও সরাসরি রেজিস্ট্রি প্রক্রিয়া</li>
+</ul>
+</div>
+<button onclick="openFeatureModal('নিরাপদ বিনিয়োগ', 'জমি বা কমার্শিয়াল স্পেস কেনার সময় সবচেয়ে বড় চিন্তা থাকে কাগজপত্রের বৈধতা নিয়ে। Air Max Land Seller Group-এর অভিজ্ঞ আইনি টিম প্রতিটি জমির পেপারস গভমেন্ট রেকর্ড থেকে নিখুঁতভাবে যাচাই করে তবেই আপনার হাতে তুলে দেয়।')" class="mt-6 text-sm font-bold text-green-600 hover:text-green-700 text-left">বিস্তারিত জানুন →</button>
 </div>
 
-<div class="bg-white border-l-4 border-blue-600 p-8 rounded-2xl hover-box shadow-md border border-gray-100">
+<!-- পেশাদার পরামর্শ -->
+<div class="bg-white border-l-4 border-blue-600 p-8 rounded-2xl hover-box shadow-md border border-gray-100 flex flex-col justify-between">
+<div>
 <div class="text-5xl mb-4 p-3 bg-blue-50 w-fit rounded-xl">💼</div>
 <h3 class="font-bold text-2xl mb-3 text-gray-800">পেশাদার পরামর্শ</h3>
-<p class="text-gray-600 leading-relaxed">আপনার প্রতিটি সিদ্ধান্তকে সফল করতে আমরা গাইডলাইন দিই।</p>
+<p class="text-gray-600 leading-relaxed mb-4">আপনার প্রতিটি সিদ্ধান্তকে সফল করতে আমরা অভিজ্ঞ গাইডলাইন দিই।</p>
+<ul class="text-sm text-gray-700 space-y-2 border-t pt-4 border-gray-100">
+<li class="flex items-center gap-2">✅ প্রপার মার্কেট অ্যানালিসিস ও কনসালটেন্সি</li>
+<li class="flex items-center gap-2">✅ বাজেট অনুযায়ী সেরা লোকেশন নির্বাচন</li>
+<li class="flex items-center gap-2">✅ ফ্যাক্টরি, ওয়্যারহাউস ও ল্যান্ড কনসালটেন্সি</li>
+<li class="flex items-center gap-2">✅ ডেডিকেটেড সাপোর্ট টিম দ্বারা গাইডেন্স</li>
+</ul>
+</div>
+<button onclick="openFeatureModal('পেশাদার পরামর্শ', 'আমাদের রয়েছে একদল দক্ষ ও প্রফেশনাল রিয়েল এস্টেট এক্সপার্ট। আপনার বাজেট এবং পছন্দ অনুযায়ী সঠিক প্রপার্টি খুঁজে বের করা থেকে শুরু করে নেগোসিয়েশন পর্যন্ত প্রতিটি ধাপে আমরা আপনার পাশে থাকি।')" class="mt-6 text-sm font-bold text-blue-600 hover:text-blue-700 text-left">বিস্তারিত জানুন →</button>
 </div>
 
 </div>
@@ -290,7 +348,7 @@ src="https://maps.google.com/maps?q=Jangalpur Jalal Complex Howrah West Bengal 7
 </div>
 </section>
 
-<!-- FLOATING BUTTONS -->
+<!-- FLOATING BUTTONS (Auto popup voice prompt assistance) -->
 <div class="fixed right-6 bottom-6 flex flex-col gap-4 z-50">
 
 <button onclick="openModal()"
@@ -331,14 +389,40 @@ Close
 </div>
 </div>
 
+<!-- FEATURE DETAIL MODAL (Representative explanation popup) -->
+<div id="featureModal" class="modal fixed inset-0 bg-black bg-opacity-60 backdrop-blur-sm justify-center items-center z-50 p-4">
+<div class="bg-white p-8 rounded-3xl max-w-lg w-full shadow-2xl relative text-center">
+<h3 id="featureTitle" class="text-2xl font-bold text-green-800 mb-4"></h3>
+<p id="featureDesc" class="text-gray-600 leading-relaxed mb-6"></p>
+<div class="bg-green-50 p-4 rounded-2xl mb-6 text-sm text-green-800 font-medium border border-green-200">
+💡 আরও বিস্তারিত জানতে বা সরাসরি ডিল ফাইনাল করতে আমাদের প্রতিনিধি বাপ্পা বা সনু দার সাথে কল করুন।
+</div>
+<div class="flex gap-4 justify-center">
+<button onclick="closeFeatureModal()" class="bg-gray-500 text-white px-6 py-2.5 rounded-xl font-bold hover:bg-gray-600 transition">বন্ধ করুন</button>
+<button onclick="closeFeatureModal(); openModal();" class="bg-green-600 text-white px-6 py-2.5 rounded-xl font-bold hover:bg-green-700 transition">সরাসরি কল করুন</button>
+</div>
+</div>
+</div>
+
 <!-- FOOTER -->
 <footer class="bg-green-950 text-white py-12 px-6 text-center border-t border-green-900">
-<h2 class="text-2xl font-bold mb-3 tracking-wider">LAND SOLUTION</h2>
+<h2 class="text-2xl font-bold mb-3 tracking-wider">LAND SOLUTION <span class="text-sm font-normal text-gray-400">(Air Max Land Seller Group)</span></h2>
 <p class="text-gray-300">জঙ্গলপুর জালাল কমপ্লেক্স, হাওড়া, ওয়েস্ট বেঙ্গল - 711302</p>
 <p class="mt-6 text-sm text-green-400">© 2026 LAND SOLUTION | All Rights Reserved</p>
 </footer>
 
 <script>
+function enterWebsite(){
+document.getElementById("welcomeOverlay").style.display = "none";
+playMusic();
+// Text-to-Speech Voice Greeting Representation
+if('speechSynthesis' in window){
+let speech = new SpeechSynthesisUtterance("নমস্কার, ল্যান্ড সলিউশনে আপনাকে স্বাগতম। এয়ার ম্যাক্স ল্যান্ড সেলার গ্রুপের মাধ্যমে আপনার জমি, কারখানা বা ওয়্যারহাউস ক্রয়ের জন্য আমাদের সাথে যোগাযোগ করুন।");
+speech.lang = 'bn-BD';
+window.speechSynthesis.speak(speech);
+}
+}
+
 function playMusic(){
 document.getElementById("bgMusic").play();
 }
@@ -357,6 +441,24 @@ document.getElementById("callModal").classList.add("active");
 
 function closeModal(){
 document.getElementById("callModal").classList.remove("active");
+}
+
+function openFeatureModal(title, desc){
+document.getElementById("featureTitle").innerText = title;
+document.getElementById("featureDesc").innerText = desc;
+document.getElementById("featureModal").classList.add("active");
+
+// Voice explanation for the clicked feature
+if('speechSynthesis' in window){
+window.speechSynthesis.cancel();
+let speech = new SpeechSynthesisUtterance(title + ". " + desc);
+speech.lang = 'bn-BD';
+window.speechSynthesis.speak(speech);
+}
+}
+
+function closeFeatureModal(){
+document.getElementById("featureModal").classList.remove("active");
 }
 
 document.getElementById("reviewForm").addEventListener("submit",function(e){
@@ -386,7 +488,7 @@ let location=document.getElementById("location").value;
 let priority=document.getElementById("priority").value;
 let message=document.getElementById("message").value;
 
-let fullMessage=`নতুন Inquiry এসেছে:
+let fullMessage=`নতুন Inquiry এসেছে (Air Max Land Seller Group):
 
 নাম: ${name}
 মোবাইল: ${phone}
