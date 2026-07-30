@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LAND SOLUTION</title>
+<title>LAND SOLUTION - Premium Real Estate Consultancy</title>
 
 <script src="https://cdn.tailwindcss.com"></script>
 
@@ -12,13 +12,14 @@ html{scroll-behavior:smooth;}
 
 body{
 font-family:sans-serif;
-background: linear-gradient(135deg, rgba(255,153,51,0.15), #ffffff, rgba(19,136,8,0.15));
+background: linear-gradient(135deg, rgba(255,153,51,0.12), #ffffff, rgba(19,136,8,0.12));
 background-attachment: fixed;
+color: #1f2937;
 }
 
 .hero-bg{
 background:
-linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.65)),
+linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),
 url("https://images.unsplash.com/photo-1500382017468-9049fed747ef");
 background-size:cover;
 background-position:center;
@@ -30,39 +31,64 @@ animation:float 3s ease-in-out infinite;
 
 @keyframes float{
 0%{transform:translateY(0);}
-50%{transform:translateY(-8px);}
+50%{transform:translateY(-10px);}
 100%{transform:translateY(0);}
 }
 
+/* International Live Animation & Glassmorphism */
+.reveal-section {
+opacity: 0;
+transform: translateY(30px);
+transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-section.active {
+opacity: 1;
+transform: translateY(0);
+}
+
 .hover-box{
-transition:0.4s;
+transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .hover-box:hover{
-transform:translateY(-8px);
-box-shadow:0 20px 40px rgba(0,0,0,.15);
+transform:translateY(-10px) scale(1.01);
+box-shadow:0 25px 50px -12px rgba(0, 0, 0, 0.15);
 }
 
 .modal{display:none;}
 .modal.active{display:flex;}
 
 .indian-gradient-bg {
-background: linear-gradient(180deg, #ffffff 0%, rgba(255,153,51,0.08) 50%, rgba(19,136,8,0.08) 100%);
+background: linear-gradient(180deg, #ffffff 0%, rgba(255,153,51,0.06) 50%, rgba(19,136,8,0.06) 100%);
 }
 
 .review-card {
 background: linear-gradient(145deg, #ffffff, #fffdfa);
-border-left: 5px solid #FF9933;
-border-right: 2px solid rgba(19,136,8,0.2);
+border-left: 6px solid #FF9933;
+border-right: 2px solid rgba(19,136,8,0.15);
 transition: all 0.4s ease;
-border-radius: 1rem;
-padding: 1.5rem;
-box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+border-radius: 1.25rem;
+padding: 1.75rem;
+box-shadow: 0 10px 30px rgba(0,0,0,0.04);
 }
 
 .review-card:hover {
-transform: translateY(-5px);
-box-shadow: 0 12px 25px rgba(255,153,51,0.2);
+transform: translateY(-8px);
+box-shadow: 0 20px 40px rgba(255,153,51,0.18);
+border-left-color: #138808;
+}
+
+/* Pulse Glow Effect for Buttons */
+.pulse-glow {
+box-shadow: 0 0 0 0 rgba(19, 136, 8, 0.4);
+animation: pulseGlow 2s infinite;
+}
+
+@keyframes pulseGlow {
+0% { box-shadow: 0 0 0 0 rgba(19, 136, 8, 0.4); }
+70% { box-shadow: 0 0 0 15px rgba(19, 136, 8, 0); }
+100% { box-shadow: 0 0 0 0 rgba(19, 136, 8, 0); }
 }
 </style>
 </head>
@@ -78,28 +104,28 @@ box-shadow: 0 12px 25px rgba(255,153,51,0.2);
 </audio>
 
 <!-- HEADER -->
-<header class="bg-green-700 text-white sticky top-0 z-50 shadow-lg">
+<header class="bg-green-700 text-white sticky top-0 z-50 shadow-xl backdrop-blur-md bg-opacity-95">
 <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-<h1 class="text-2xl md:text-3xl font-bold">LAND SOLUTION</h1>
+<h1 class="text-2xl md:text-3xl font-extrabold tracking-wider">LAND SOLUTION</h1>
 </div>
 </header>
 
 <!-- HERO -->
 <section class="hero-bg min-h-screen flex items-center justify-center text-center px-4">
-<div class="text-white">
-<h2 class="text-4xl md:text-6xl font-bold mb-4">আপনার জমি, আমাদের দায়িত্ব</h2>
-<p class="text-lg md:text-2xl mb-8">বিশ্বাসযোগ্যতা • স্বচ্ছতা • সঠিক ডিল</p>
+<div class="text-white max-w-4xl mx-auto">
+<h2 class="text-4xl md:text-6xl font-black mb-4 leading-tight drop-shadow-lg">আপনার জমি, আমাদের দায়িত্ব</h2>
+<p class="text-lg md:text-2xl mb-8 font-medium tracking-wide text-gray-200">বিশ্বাসযোগ্যতা • স্বচ্ছতা • সঠিক ডিল</p>
 
 <div class="flex flex-wrap justify-center gap-4">
-<button onclick="playMusic()" class="bg-green-600 px-6 py-3 rounded-full font-bold hover:scale-105 transition">
+<button onclick="playMusic()" class="bg-green-600 px-7 py-3.5 rounded-full font-bold hover:scale-105 transition shadow-lg">
 ▶ Music
 </button>
 
-<button onclick="pauseMusic()" class="bg-white text-black px-6 py-3 rounded-full font-bold hover:scale-105 transition">
+<button onclick="pauseMusic()" class="bg-white text-black px-7 py-3.5 rounded-full font-bold hover:scale-105 transition shadow-lg">
 ⏸ Pause
 </button>
 
-<a href="#contact" class="bg-blue-600 px-6 py-3 rounded-full font-bold hover:scale-105 transition">
+<a href="#contact" class="bg-blue-600 px-7 py-3.5 rounded-full font-bold hover:scale-105 transition shadow-lg">
 যোগাযোগ
 </a>
 </div>
@@ -107,49 +133,49 @@ box-shadow: 0 12px 25px rgba(255,153,51,0.2);
 </section>
 
 <!-- ABOUT -->
-<section class="py-20 px-6 indian-gradient-bg">
-<div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center">
+<section class="py-24 px-6 indian-gradient-bg reveal-section">
+<div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
 <div>
-<h2 class="text-3xl font-bold text-green-700 mb-4">আমাদের সম্পর্কে</h2>
-<p class="text-lg leading-8 text-gray-700">
+<h2 class="text-3xl md:text-4xl font-bold text-green-800 mb-6">আমাদের সম্পর্কে</h2>
+<p class="text-lg leading-relaxed text-gray-700">
 Land Solution একটি বিশ্বস্ত land consultancy platform।
 আমরা জমি, factory, godown, rent, buy/sell এর কাজ করি।
 আমাদের প্রতিটি ডিল legal verification এর মাধ্যমে হয়।
 </p>
 </div>
 
-<div>
+<div class="overflow-hidden rounded-2xl shadow-2xl">
 <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa"
-class="rounded-xl shadow-xl w-full hover-box">
+class="rounded-2xl w-full hover-box transform hover:scale-105 transition duration-500">
 </div>
 </div>
 </section>
 
 <!-- TRUST CARDS -->
-<section class="py-20 px-6 bg-white">
+<section class="py-24 px-6 bg-white reveal-section">
 <div class="max-w-7xl mx-auto">
-<h2 class="text-3xl font-bold text-center text-green-700 mb-14">
+<h2 class="text-3xl md:text-4xl font-bold text-center text-green-800 mb-16">
 আপনার বিনিয়োগ, আমাদের দায়িত্ব
 </h2>
 
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-<div class="bg-white border-l-4 border-orange-500 p-6 rounded-2xl hover-box shadow-sm">
-<div class="text-4xl mb-4">📈</div>
-<h3 class="font-bold text-xl mb-3">ভবিষ্যতের সুরক্ষা</h3>
-<p class="text-gray-600">আপনার আজকের সঞ্চয়, আগামীকালের নিশ্চিন্ত জীবন।</p>
+<div class="bg-white border-l-4 border-orange-500 p-8 rounded-2xl hover-box shadow-md border border-gray-100">
+<div class="text-5xl mb-4 p-3 bg-orange-50 w-fit rounded-xl">📈</div>
+<h3 class="font-bold text-2xl mb-3 text-gray-800">ভবিষ্যতের সুরক্ষা</h3>
+<p class="text-gray-600 leading-relaxed">আপনার আজকের সঞ্চয়, আগামীকালের নিশ্চিন্ত জীবন।</p>
 </div>
 
-<div class="bg-white border-l-4 border-green-600 p-6 rounded-2xl hover-box shadow-sm">
-<div class="text-4xl mb-4">🛡️</div>
-<h3 class="font-bold text-xl mb-3">নিরাপদ বিনিয়োগ</h3>
-<p class="text-gray-600">আমরা মানুষের ভবিষ্যৎ বিনিয়োগকে নিরাপদ করতে কাজ করি।</p>
+<div class="bg-white border-l-4 border-green-600 p-8 rounded-2xl hover-box shadow-md border border-gray-100">
+<div class="text-5xl mb-4 p-3 bg-green-50 w-fit rounded-xl">🛡️</div>
+<h3 class="font-bold text-2xl mb-3 text-gray-800">নিরাপদ বিনিয়োগ</h3>
+<p class="text-gray-600 leading-relaxed">আমরা মানুষের ভবিষ্যৎ বিনিয়োগকে নিরাপদ করতে কাজ করি।</p>
 </div>
 
-<div class="bg-white border-l-4 border-blue-600 p-6 rounded-2xl hover-box shadow-sm">
-<div class="text-4xl mb-4">💼</div>
-<h3 class="font-bold text-xl mb-3">পেশাদার পরামর্শ</h3>
-<p class="text-gray-600">আপনার প্রতিটি সিদ্ধান্তকে সফল করতে আমরা গাইডলাইন দিই।</p>
+<div class="bg-white border-l-4 border-blue-600 p-8 rounded-2xl hover-box shadow-md border border-gray-100">
+<div class="text-5xl mb-4 p-3 bg-blue-50 w-fit rounded-xl">💼</div>
+<h3 class="font-bold text-2xl mb-3 text-gray-800">পেশাদার পরামর্শ</h3>
+<p class="text-gray-600 leading-relaxed">আপনার প্রতিটি সিদ্ধান্তকে সফল করতে আমরা গাইডলাইন দিই।</p>
 </div>
 
 </div>
@@ -157,69 +183,69 @@ class="rounded-xl shadow-xl w-full hover-box">
 </section>
 
 <!-- REVIEWS -->
-<section class="py-20 px-6 indian-gradient-bg">
+<section class="py-24 px-6 indian-gradient-bg reveal-section">
 <div class="max-w-6xl mx-auto">
-<h2 class="text-3xl text-center font-bold text-green-700 mb-12">গ্রাহকদের মতামত</h2>
+<h2 class="text-3xl md:text-4xl text-center font-bold text-green-800 mb-16">গ্রাহকদের মতামত</h2>
 
-<div id="reviewList" class="grid md:grid-cols-2 gap-6">
+<div id="reviewList" class="grid md:grid-cols-2 gap-8">
 <div class="review-card">
-<div class="text-amber-500 text-lg mb-2">⭐⭐⭐⭐⭐</div>
-<p class="text-gray-700 italic mb-4">"আমাদের নতুন ওয়্যারহাউস ও লজিস্টিকসের জন্য জমি ক্রয়ের ক্ষেত্রে Land Solution-এর টিম সম্পূর্ণ স্বচ্ছতা ও আইনি সহায়তা প্রদান করেছে। অসাধারণ পেশাদারিত্ব!"</p>
-<div class="font-bold text-green-800 text-sm">- সায়ন ব্যানার্জি (অপারেশন হেড, নর্থ স্টার ট্রেডিং এন্ড লজিস্টিকস)</div>
+<div class="text-amber-500 text-lg mb-3 tracking-widest">⭐⭐⭐⭐⭐</div>
+<p class="text-gray-700 italic mb-4 leading-relaxed">"আমাদের নতুন ওয়্যারহাউস ও লজিস্টিকসের জন্য জমি ক্রয়ের ক্ষেত্রে Land Solution-এর টিম সম্পূর্ণ স্বচ্ছতা ও আইনি সহায়তা প্রদান করেছে। অসাধারণ পেশাদারিত্ব!"</p>
+<div class="font-bold text-green-900 text-sm">- সায়ন ব্যানার্জি (অপারেশন হেড, নর্থ স্টার ট্রেডিং এন্ড লজিস্টিকস)</div>
 </div>
 
 <div class="review-card">
-<div class="text-amber-500 text-lg mb-2">⭐⭐⭐⭐⭐</div>
-<p class="text-gray-700 italic mb-4">"কমার্শিয়াল ল্যান্ড ডিলিংয়ের ক্ষেত্রে সঠিক কাগজপত্রের স্বচ্ছতা খুব জরুরি। এনারা আমাদের প্রজেক্টের জন্য একদম লিগ্যাল ক্লিয়ারেন্সযুক্ত জমি খুব কম সময়ে ব্যবস্থা করে দিয়েছেন।"</p>
-<div class="font-bold text-green-800 text-sm">- অরিন্দম সেন (ডিরেক্টর, ইকো ভিউ রিয়েলটেক প্রাইভেট লিমিটেড)</div>
+<div class="text-amber-500 text-lg mb-3 tracking-widest">⭐⭐⭐⭐⭐</div>
+<p class="text-gray-700 italic mb-4 leading-relaxed">"কমার্শিয়াল ল্যান্ড ডিলিংয়ের ক্ষেত্রে সঠিক কাগজপত্রের স্বচ্ছতা খুব জরুরি। এনারা আমাদের প্রজেক্টের জন্য একদম লিগ্যাল ক্লিয়ারেন্সযুক্ত জমি খুব কম সময়ে ব্যবস্থা করে দিয়েছেন।"</p>
+<div class="font-bold text-green-900 text-sm">- অরিন্দম সেন (ডিরেক্টর, ইকো ভিউ রিয়েলটেক প্রাইভেট লিমিটেড)</div>
 </div>
 
 <div class="review-card">
-<div class="text-amber-500 text-lg mb-2">⭐⭐⭐⭐⭐</div>
-<p class="text-gray-700 italic mb-4">"জমি কেনা নিয়ে সবসময়ই একটা ভয় কাজ করে যে কাগজপত্র ঠিকঠাক থাকবে তো! তবে Land Solution-এর মাধ্যমে জমি কেনার পর সব ভয় দূর হয়ে গেছে। একদম পরিষ্কার কাগজ এবং ঝামেলাহীন প্রক্রিয়া।"</p>
-<div class="font-bold text-green-800 text-sm">- সৌমেন মুখার্জী (বারাসত, কলকাতা)</div>
+<div class="text-amber-500 text-lg mb-3 tracking-widest">⭐⭐⭐⭐⭐</div>
+<p class="text-gray-700 italic mb-4 leading-relaxed">"জমি কেনা নিয়ে সবসময়ই একটা ভয় কাজ করে যে কাগজপত্র ঠিকঠাক থাকবে তো! তবে Land Solution-এর মাধ্যমে জমি কেনার পর সব ভয় দূর হয়ে গেছে। একদম পরিষ্কার কাগজ এবং ঝামেলাহীন প্রক্রিয়া।"</p>
+<div class="font-bold text-green-900 text-sm">- সৌমেন মুখার্জী (বারাসত, কলকাতা)</div>
 </div>
 
 <div class="review-card">
-<div class="text-amber-500 text-lg mb-2">⭐⭐⭐⭐⭐</div>
-<p class="text-gray-700 italic mb-4">"আমরা অনেক দিন ধরে একটা ভালো প্লট খুঁজছিলাম। এরা আমাদের বাজেটের মধ্যে একদম মনের মতো লোকেশনে জমি পাইয়ে দিয়েছে। এদের কথা ও কাজের মিল দেখে সত্যি মুগ্ধ।"</p>
-<div class="font-bold text-green-800 text-sm">- অর্পিতা ঘোষ (গড়িয়া, কলকাতা)</div>
+<div class="text-amber-500 text-lg mb-3 tracking-widest">⭐⭐⭐⭐⭐</div>
+<p class="text-gray-700 italic mb-4 leading-relaxed">"আমরা অনেক দিন ধরে একটা ভালো প্লট খুঁজছিলাম। এরা আমাদের বাজেটের মধ্যে একদম মনের মতো লোকেশনে জমি পাইয়ে দিয়েছে। এদের কথা ও কাজের মিল দেখে সত্যি মুগ্ধ।"</p>
+<div class="font-bold text-green-900 text-sm">- অর্পিতা ঘোষ (গড়িয়া, কলকাতা)</div>
 </div>
 </div>
 </div>
 </section>
 
 <!-- REVIEW FORM -->
-<section class="py-20 px-6 bg-white">
-<div class="max-w-3xl mx-auto bg-white border border-gray-100 p-8 rounded-2xl shadow-lg">
-<h2 class="text-3xl text-center font-bold text-green-700 mb-8">আপনার মতামত</h2>
+<section class="py-24 px-6 bg-white reveal-section">
+<div class="max-w-3xl mx-auto bg-white border border-gray-100 p-8 md:p-12 rounded-3xl shadow-2xl">
+<h2 class="text-3xl text-center font-bold text-green-800 mb-8">আপনার মতামত</h2>
 
-<form id="reviewForm" class="space-y-4">
-<input id="reviewName" class="w-full border p-4 rounded-lg focus:ring-2 focus:ring-green-500 outline-none" placeholder="আপনার নাম">
-<textarea id="reviewText" rows="5" class="w-full border p-4 rounded-lg focus:ring-2 focus:ring-green-500 outline-none" placeholder="আপনার মতামত লিখুন"></textarea>
-<button class="w-full bg-green-700 text-white py-4 rounded-lg hover:bg-green-800 transition font-bold">Submit Review</button>
+<form id="reviewForm" class="space-y-6">
+<input id="reviewName" class="w-full border border-gray-200 p-4 rounded-xl focus:ring-2 focus:ring-green-500 focus:outline-none transition shadow-sm" placeholder="আপনার নাম">
+<textarea id="reviewText" rows="5" class="w-full border border-gray-200 p-4 rounded-xl focus:ring-2 focus:ring-green-500 focus:outline-none transition shadow-sm" placeholder="আপনার মতামত লিখুন"></textarea>
+<button class="w-full bg-green-700 text-white py-4 rounded-xl hover:bg-green-800 transition font-bold shadow-lg shadow-green-700/30">Submit Review</button>
 </form>
 </div>
 </section>
 
 <!-- CONTACT FORM -->
-<section id="contact" class="py-20 px-6 indian-gradient-bg">
-<div class="max-w-5xl mx-auto bg-white rounded-3xl shadow-2xl overflow-hidden grid md:grid-cols-2">
+<section id="contact" class="py-24 px-6 indian-gradient-bg reveal-section">
+<div class="max-w-5xl mx-auto bg-white rounded-3xl shadow-2xl overflow-hidden grid md:grid-cols-2 border border-gray-100">
 
-<div class="bg-gradient-to-br from-orange-500 via-green-700 to-green-800 text-white p-8 flex flex-col justify-center">
-<h2 class="text-3xl font-bold mb-6">আপনার প্রয়োজন জানিয়ে দিন</h2>
-<p class="leading-8">আমাদের টিম দ্রুত আপনার সাথে যোগাযোগ করবে।</p>
+<div class="bg-gradient-to-br from-orange-500 via-green-700 to-green-900 text-white p-10 md:p-12 flex flex-col justify-center">
+<h2 class="text-3xl md:text-4xl font-extrabold mb-6 leading-snug">আপনার প্রয়োজন জানিয়ে দিন</h2>
+<p class="leading-relaxed text-gray-100 text-lg">আমাদের টিম দ্রুত আপনার সাথে যোগাযোগ করবে এবং সেরা সলিউশন দেবে।</p>
 </div>
 
-<div class="p-8 space-y-5">
+<div class="p-8 md:p-12 space-y-6">
 
 <form id="contactForm" class="space-y-5">
 
-<input id="name" class="w-full border p-4 rounded-xl" placeholder="আপনার নাম">
+<input id="name" class="w-full border border-gray-200 p-4 rounded-xl focus:ring-2 focus:ring-green-500 focus:outline-none transition shadow-sm" placeholder="আপনার নাম">
 
-<input id="phone" class="w-full border p-4 rounded-xl" placeholder="মোবাইল নম্বর">
+<input id="phone" class="w-full border border-gray-200 p-4 rounded-xl focus:ring-2 focus:ring-green-500 focus:outline-none transition shadow-sm" placeholder="মোবাইল নম্বর">
 
-<select id="purpose" class="w-full border p-4 rounded-xl">
+<select id="purpose" class="w-full border border-gray-200 p-4 rounded-xl focus:ring-2 focus:ring-green-500 focus:outline-none transition shadow-sm bg-white">
 <option>Buying Land</option>
 <option>Renting Property</option>
 <option>Selling Land</option>
@@ -230,20 +256,20 @@ class="rounded-xl shadow-xl w-full hover-box">
 <option>Legal Verification</option>
 </select>
 
-<input id="budget" class="w-full border p-4 rounded-xl" placeholder="আপনার বাজেট">
+<input id="budget" class="w-full border border-gray-200 p-4 rounded-xl focus:ring-2 focus:ring-green-500 focus:outline-none transition shadow-sm" placeholder="আপনার বাজেট">
 
-<input id="location" class="w-full border p-4 rounded-xl" placeholder="পছন্দের লোকেশন">
+<input id="location" class="w-full border border-gray-200 p-4 rounded-xl focus:ring-2 focus:ring-green-500 focus:outline-none transition shadow-sm" placeholder="পছন্দের লোকেশন">
 
-<select id="priority" class="w-full border p-4 rounded-xl">
+<select id="priority" class="w-full border border-gray-200 p-4 rounded-xl focus:ring-2 focus:ring-green-500 focus:outline-none transition shadow-sm bg-white">
 <option>Urgent</option>
 <option>Within 7 Days</option>
 <option>Within 30 Days</option>
 <option>Flexible</option>
 </select>
 
-<textarea id="message" rows="5" class="w-full border p-4 rounded-xl" placeholder="আপনার বার্তা"></textarea>
+<textarea id="message" rows="5" class="w-full border border-gray-200 p-4 rounded-xl focus:ring-2 focus:ring-green-500 focus:outline-none transition shadow-sm" placeholder="আপনার বার্তা"></textarea>
 
-<button class="w-full bg-green-700 text-white py-4 rounded-xl hover:bg-green-800 transition font-bold">
+<button class="w-full bg-green-700 text-white py-4 rounded-xl hover:bg-green-800 transition font-bold shadow-lg shadow-green-700/30">
 WhatsApp এ Inquiry পাঠান
 </button>
 
@@ -253,52 +279,52 @@ WhatsApp এ Inquiry পাঠান
 </section>
 
 <!-- LOCATION -->
-<section class="py-20 px-6 bg-white">
+<section class="py-24 px-6 bg-white reveal-section">
 <div class="max-w-6xl mx-auto">
-<h2 class="text-3xl text-center font-bold text-green-700 mb-8">আমাদের লোকেশন</h2>
+<h2 class="text-3xl md:text-4xl text-center font-bold text-green-800 mb-10">আমাদের লোকেশন</h2>
 
-<iframe class="w-full rounded-xl shadow-lg"
-height="400"
+<iframe class="w-full rounded-2xl shadow-2xl border border-gray-200"
+height="450"
 src="https://maps.google.com/maps?q=Jangalpur Jalal Complex Howrah West Bengal 711302&t=&z=17&ie=UTF8&iwloc=&output=embed">
 </iframe>
 </div>
 </section>
 
 <!-- FLOATING BUTTONS -->
-<div class="fixed right-5 bottom-5 flex flex-col gap-3 z-50">
+<div class="fixed right-6 bottom-6 flex flex-col gap-4 z-50">
 
 <button onclick="openModal()"
-class="bg-blue-600 text-white px-6 py-4 rounded-full shadow-xl font-bold float">
+class="bg-blue-600 text-white px-7 py-4 rounded-full shadow-2xl font-bold hover:bg-blue-700 transition float pulse-glow">
 📞 Call Now
 </button>
 
 <a onclick="playWATone()"
 href="https://wa.me/message/QAO2M2PEBMPXP1"
 target="_blank"
-class="bg-green-500 text-white px-6 py-4 rounded-full shadow-xl font-bold float">
+class="bg-green-500 text-white px-7 py-4 rounded-full shadow-2xl font-bold hover:bg-green-600 transition float pulse-glow">
 💬 WhatsApp
 </a>
 
 </div>
 
 <!-- CALL MODAL -->
-<div id="callModal" class="modal fixed inset-0 bg-black bg-opacity-60 justify-center items-center z-50">
-<div class="bg-white p-8 rounded-2xl text-center w-80 shadow-2xl">
+<div id="callModal" class="modal fixed inset-0 bg-black bg-opacity-60 backdrop-blur-sm justify-center items-center z-50">
+<div class="bg-white p-8 rounded-3xl text-center w-80 shadow-2xl transform transition-all">
 
-<h3 class="text-2xl font-bold mb-6">কল করুন</h3>
+<h3 class="text-2xl font-bold mb-6 text-gray-800">কল করুন</h3>
 
 <a href="tel:+918777341778"
-class="block bg-blue-600 text-white p-4 rounded-lg mb-4 font-bold">
+class="block bg-blue-600 text-white p-4 rounded-xl font-bold mb-4 shadow hover:bg-blue-700 transition">
 বাপ্পা
 </a>
 
 <a href="tel:+917980471077"
-class="block bg-green-600 text-white p-4 rounded-lg mb-4 font-bold">
+class="block bg-green-600 text-white p-4 rounded-xl font-bold mb-4 shadow hover:bg-green-700 transition">
 সনু দা
 </a>
 
 <button onclick="closeModal()"
-class="bg-red-500 text-white px-6 py-2 rounded-lg font-bold">
+class="bg-red-500 text-white px-6 py-2.5 rounded-xl font-bold hover:bg-red-600 transition">
 Close
 </button>
 
@@ -306,10 +332,10 @@ Close
 </div>
 
 <!-- FOOTER -->
-<footer class="bg-green-900 text-white py-10 px-6 text-center">
-<h2 class="text-2xl font-bold mb-4">LAND SOLUTION</h2>
-<p>জঙ্গলপুর জালাল কমপ্লেক্স, হাওড়া, ওয়েস্ট বেঙ্গল - 711302</p>
-<p class="mt-4">© 2026 LAND SOLUTION | All Rights Reserved</p>
+<footer class="bg-green-950 text-white py-12 px-6 text-center border-t border-green-900">
+<h2 class="text-2xl font-bold mb-3 tracking-wider">LAND SOLUTION</h2>
+<p class="text-gray-300">জঙ্গলপুর জালাল কমপ্লেক্স, হাওড়া, ওয়েস্ট বেঙ্গল - 711302</p>
+<p class="mt-6 text-sm text-green-400">© 2026 LAND SOLUTION | All Rights Reserved</p>
 </footer>
 
 <script>
@@ -343,7 +369,7 @@ if(!name || !text) return;
 
 let review=document.createElement("div");
 review.className="review-card";
-review.innerHTML=`<div class="text-amber-500 text-lg mb-2">⭐⭐⭐⭐⭐</div><p class="text-gray-700 italic mb-4">"${text}"</p><div class="font-bold text-green-800 text-sm">- ${name}</div>`;
+review.innerHTML=`<div class="text-amber-500 text-lg mb-3 tracking-widest">⭐⭐⭐⭐⭐</div><p class="text-gray-700 italic mb-4 leading-relaxed">"${text}"</p><div class="font-bold text-green-900 text-sm">- ${name}</div>`;
 
 document.getElementById("reviewList").prepend(review);
 this.reset();
@@ -378,6 +404,23 @@ window.open(
 `https://wa.me/message/QAO2M2PEBMPXP1?text=${encoded}`,
 "_blank"
 );
+});
+
+// Live Scroll Reveal Animation Observer
+const observerOptions = {
+threshold: 0.1
+};
+
+const observer = new IntersectionObserver((entries, observer) => {
+entries.forEach(entry => {
+if(entry.isIntersecting){
+entry.target.classList.add('active');
+}
+});
+}, observerOptions);
+
+document.querySelectorAll('.reveal-section').forEach(section => {
+observer.observe(section);
 });
 </script>
 
