@@ -93,7 +93,7 @@ animation: pulseGlow 2s infinite;
 #welcomeOverlay {
 position: fixed;
 inset: 0;
-background: linear-gradient(135deg, rgba(20,20,20,0.95), rgba(10,40,20,0.95));
+background: linear-gradient(135deg, rgba(10,25,15,0.95), rgba(5,15,10,0.98));
 z-index: 99999;
 display: flex;
 justify-content: center;
@@ -107,13 +107,13 @@ padding: 20px;
 </head>
 <body>
 
-<!-- WELCOME OVERLAY (3rd & 4th Image Concept: Spiritual/Indian Theme & Representative) -->
+<!-- WELCOME OVERLAY (Improved with reliable image & crisp text) -->
 <div id="welcomeOverlay">
-<div class="max-w-xl bg-white/10 backdrop-blur-md p-8 rounded-3xl border border-white/20 shadow-2xl">
-<img src="https://i.ibb.co/3m3v7y2/namaste.png" onerror="this.src='https://images.unsplash.com/photo-1544005313-94ddf0286df2'" class="w-32 h-32 mx-auto rounded-full object-cover mb-4 border-4 border-orange-400 shadow-lg float" alt="Representative">
-<h1 class="text-3xl font-extrabold mb-2 text-orange-300">নমস্কার, LAND SOLUTION-এ স্বাগতম!</h1>
-<p class="text-sm text-gray-200 mb-4">Air Max Land Seller Group-এর পক্ষ سے আমি আপনার ডিজিটাল প্রতিনিধি। আমাদের প্রজেক্ট এবং সার্ভিস সম্পর্কে জানতে নিচে ক্লিক করুন।</p>
-<button onclick="enterWebsite()" class="bg-gradient-to-r from-orange-500 to-green-600 text-white px-8 py-3.5 rounded-full font-bold text-lg shadow-xl hover:scale-105 transition">
+<div class="max-w-xl bg-white/10 backdrop-blur-xl p-8 md:p-10 rounded-3xl border border-white/20 shadow-2xl">
+<img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2" class="w-28 h-28 mx-auto rounded-full object-cover mb-5 border-4 border-orange-400 shadow-xl float" alt="Representative">
+<h1 class="text-3xl font-extrabold mb-3 text-orange-300 drop-shadow">নমস্কার, LAND SOLUTION-এ স্বাগতম!</h1>
+<p class="text-base text-gray-100 mb-6 leading-relaxed">Air Max Land Seller Group-এর পক্ষ থেকে আমি আপনার ডিজিটাল প্রতিনিধি। আমাদের প্রজেক্ট এবং সার্ভিস সম্পর্কে জানতে নিচে ক্লিক করুন।</p>
+<button onclick="enterWebsite()" class="bg-gradient-to-r from-orange-500 to-green-600 text-white px-9 py-3.5 rounded-full font-bold text-lg shadow-xl hover:scale-105 transition">
 প্রবেশ করুন (Enter Website)
 </button>
 </div>
@@ -187,7 +187,7 @@ class="rounded-2xl w-full hover-box transform hover:scale-105 transition duratio
 
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-<!-- ভবিষ্যতে যে সুরক্ষা (Expanded & Detailed) -->
+<!-- ভবিষ্যতে যে সুরক্ষা -->
 <div class="bg-white border-l-4 border-orange-500 p-8 rounded-2xl hover-box shadow-md border border-gray-100 flex flex-col justify-between">
 <div>
 <div class="text-5xl mb-4 p-3 bg-orange-50 w-fit rounded-xl">📈</div>
@@ -348,7 +348,7 @@ src="https://maps.google.com/maps?q=Jangalpur Jalal Complex Howrah West Bengal 7
 </div>
 </section>
 
-<!-- FLOATING BUTTONS (Auto popup voice prompt assistance) -->
+<!-- FLOATING BUTTONS -->
 <div class="fixed right-6 bottom-6 flex flex-col gap-4 z-50">
 
 <button onclick="openModal()"
@@ -389,7 +389,7 @@ Close
 </div>
 </div>
 
-<!-- FEATURE DETAIL MODAL (Representative explanation popup) -->
+<!-- FEATURE DETAIL MODAL -->
 <div id="featureModal" class="modal fixed inset-0 bg-black bg-opacity-60 backdrop-blur-sm justify-center items-center z-50 p-4">
 <div class="bg-white p-8 rounded-3xl max-w-lg w-full shadow-2xl relative text-center">
 <h3 id="featureTitle" class="text-2xl font-bold text-green-800 mb-4"></h3>
@@ -415,7 +415,6 @@ Close
 function enterWebsite(){
 document.getElementById("welcomeOverlay").style.display = "none";
 playMusic();
-// Text-to-Speech Voice Greeting Representation
 if('speechSynthesis' in window){
 let speech = new SpeechSynthesisUtterance("নমস্কার, ল্যান্ড সলিউশনে আপনাকে স্বাগতম। এয়ার ম্যাক্স ল্যান্ড সেলার গ্রুপের মাধ্যমে আপনার জমি, কারখানা বা ওয়্যারহাউস ক্রয়ের জন্য আমাদের সাথে যোগাযোগ করুন।");
 speech.lang = 'bn-BD';
@@ -448,7 +447,6 @@ document.getElementById("featureTitle").innerText = title;
 document.getElementById("featureDesc").innerText = desc;
 document.getElementById("featureModal").classList.add("active");
 
-// Voice explanation for the clicked feature
 if('speechSynthesis' in window){
 window.speechSynthesis.cancel();
 let speech = new SpeechSynthesisUtterance(title + ". " + desc);
@@ -508,7 +506,6 @@ window.open(
 );
 });
 
-// Live Scroll Reveal Animation Observer
 const observerOptions = {
 threshold: 0.1
 };
